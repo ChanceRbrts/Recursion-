@@ -33,18 +33,11 @@
 @synthesize window = _window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
-
-    /* Set the scale mode to scale to fit the window */
-    scene.scaleMode = SKSceneScaleModeAspectFit;
-
+    GameScene *scene = [[GameScene alloc] init];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    scene.backgroundColor = [SKColor colorWithRed:1 green:1 blue:1 alpha:1];
     [self.skView presentScene:scene];
-
-    /* Sprite Kit applies additional optimizations to improve rendering performance */
-    self.skView.ignoresSiblingOrder = YES;
-    
     self.skView.showsFPS = YES;
-    self.skView.showsNodeCount = YES;
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {

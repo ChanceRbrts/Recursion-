@@ -11,7 +11,7 @@
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {
-    /* Setup your scene here */
+    /*/* Setup your scene here 
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     
     myLabel.text = @"Hello, World!";
@@ -19,28 +19,21 @@
     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                    CGRectGetMidY(self.frame));
     
-    [self addChild:myLabel];
+    [self addChild:myLabel];*/
+    self.c = [[Controls alloc] init];
 }
 
--(void)mouseDown:(NSEvent *)theEvent {
-     /* Called when a mouse click occurs */
-    
-    CGPoint location = [theEvent locationInNode:self];
-    
-    SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-    
-    sprite.position = location;
-    sprite.scale = 0.5;
-    
-    SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-    
-    [sprite runAction:[SKAction repeatActionForever:action]];
-    
-    [self addChild:sprite];
+-(void)keyDown:(NSEvent *)theEvent{
+    [self.c keyPressedWithEvent:theEvent];
+}
+
+-(void)keyUp:(NSEvent *)theEvent{
+    [self.c keyReleasedWithEvent:theEvent];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    [self.c resetControls];
 }
 
 @end
