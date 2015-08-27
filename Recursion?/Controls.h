@@ -21,10 +21,12 @@ enum conKeys{
 
 @interface Controls : NSObject
 @property NSMutableArray* controlsPressed;
+@property NSMutableArray* controlsLastPressed;
 @property NSMutableArray* controlsHeld;
 -(id)initWithMore;
 -(void)keyPressedWithEvent:(NSEvent *)event;
 -(void)keyReleasedWithEvent:(NSEvent *)event;
+-(void)checkPressed;
 -(void)resetControls;
 @end
 

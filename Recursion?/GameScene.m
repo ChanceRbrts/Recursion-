@@ -20,7 +20,8 @@
                                    CGRectGetMidY(self.frame));
     
     [self addChild:myLabel];*/
-    self.c = [[Controls alloc] init];
+    self.c = [[Controls alloc] initWithMore];
+    self.OBJMAN = [[objManager alloc] init];
 }
 
 -(void)keyDown:(NSEvent *)theEvent{
@@ -33,6 +34,8 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    [self.c checkPressed];
+    [self.OBJMAN update];
     [self.c resetControls];
 }
 

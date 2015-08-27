@@ -16,7 +16,14 @@
     self = [super init];
     self.controlsPressed = [[NSMutableArray alloc] initWithObjects: @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, nil];
     self.controlsHeld = [[NSMutableArray alloc] initWithObjects: @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, nil];
+    self.controlsLastPressed = [[NSMutableArray alloc] initWithObjects: @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, @NO, nil];
     return self;
+}
+
+-(void)checkPressed{
+    for (int i = 0; i < [self.controlsPressed count]; i++){
+        self.controlsLastPressed[i] = self.controlsPressed[i];
+    }
 }
 
 -(void) keyPressedWithEvent:(NSEvent *)event {
@@ -127,7 +134,9 @@
 
 -(void) resetControls{
     for (int i = 0; i < [self.controlsPressed count]; i++){
-        self.controlsPressed[i] = @NO;
+        if ([self.controlsLastPressed isEqual: @YES]){
+            self.controlsPressed[i] = @NO;
+        }
     }
 }
 
