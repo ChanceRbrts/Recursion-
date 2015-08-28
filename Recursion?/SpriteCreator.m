@@ -9,4 +9,7 @@
 #import <Foundation/Foundation.h>
 #include "SpriteCreator.h"
 @implementation SpriteCreator
+-(SKNode *)createNodeWithArray: (NSMutableArray*)array{
+    return [[SKNode alloc] init]; //Put more things here later.
+}
 @end

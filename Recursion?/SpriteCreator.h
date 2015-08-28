@@ -8,6 +8,8 @@
 
 #ifndef Recursion__SpriteCreator_h
 #define Recursion__SpriteCreator_h
+#import <SpriteKit/SpriteKit.h>
 @interface SpriteCreator : NSObject
+-(SKNode *)createNodeWithArray: (NSMutableArray*)array;
 @end
 #endif
