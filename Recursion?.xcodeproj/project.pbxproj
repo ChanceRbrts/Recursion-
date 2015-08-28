@@ -15,6 +15,7 @@
 		1541D9631B87C49C00E5CDE5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1541D9611B87C49C00E5CDE5 /* MainMenu.xib */; };
 		1541D96F1B87C49C00E5CDE5 /* Recursion_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D96E1B87C49C00E5CDE5 /* Recursion_Tests.m */; };
 		1541D9791B87C61400E5CDE5 /* Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D9781B87C61400E5CDE5 /* Controls.m */; };
+		15A37C291B8FC36300325096 /* PlatformerInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A37C281B8FC36300325096 /* PlatformerInstance.m */; };
 		15EFCA501B8EBC5F0018FB65 /* objManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFCA4F1B8EBC5F0018FB65 /* objManager.m */; };
 		15EFCA551B8EBF120018FB65 /* Instance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFCA541B8EBF120018FB65 /* Instance.m */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,8 @@
 		1541D96E1B87C49C00E5CDE5 /* Recursion_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recursion_Tests.m; sourceTree = "<group>"; };
 		1541D9781B87C61400E5CDE5 /* Controls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controls.m; sourceTree = "<group>"; };
 		1541D97A1B87C62800E5CDE5 /* Controls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
+		15A37C271B8FC34F00325096 /* PlatformerInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlatformerInstance.h; path = Instances/PlatformerInstance.h; sourceTree = "<group>"; };
+		15A37C281B8FC36300325096 /* PlatformerInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformerInstance.m; path = Instances/PlatformerInstance.m; sourceTree = "<group>"; };
 		15EFCA4E1B8EBB9F0018FB65 /* objManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objManager.h; sourceTree = "<group>"; };
 		15EFCA4F1B8EBC5F0018FB65 /* objManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = objManager.m; sourceTree = "<group>"; };
 		15EFCA531B8EBED40018FB65 /* Instance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Instance.h; path = Instances/Instance.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				15EFCA4F1B8EBC5F0018FB65 /* objManager.m */,
 				15EFCA531B8EBED40018FB65 /* Instance.h */,
 				15EFCA541B8EBF120018FB65 /* Instance.m */,
+				15A37C271B8FC34F00325096 /* PlatformerInstance.h */,
+				15A37C281B8FC36300325096 /* PlatformerInstance.m */,
 			);
 			name = Instances;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				15EFCA501B8EBC5F0018FB65 /* objManager.m in Sources */,
 				1541D95C1B87C49C00E5CDE5 /* GameScene.m in Sources */,
 				1541D9571B87C49C00E5CDE5 /* AppDelegate.m in Sources */,
+				15A37C291B8FC36300325096 /* PlatformerInstance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

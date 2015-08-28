@@ -10,9 +10,13 @@
 #define Recursion__Instance_h
 @interface Instance : NSObject
 @property float x, y, dX, dY, w, h;
-@property NSMutableArray *collidePoint;
+@property NSString *type;
+-(void) extraCollisionWithDegree:(int)dg;
+-(Instance *) collisionWithInstance:(Instance *)i;
 -(void) update;
+-(void) ai;
 -(NSMutableArray *) draw;
+-(void) finishUpdate;
 @end
 
 #endif
