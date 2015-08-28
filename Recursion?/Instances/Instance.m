@@ -9,9 +9,26 @@
 #import <Foundation/Foundation.h>
 #include "Instance.h"
 @implementation Instance
+-(id)initWithX:(float)X y:(float)Y{
+    self = [super init];
+    self.x = X*32;
+    self.y = Y*32;
+    self.w = 32;
+    self.h = 32;
+    self.maxHP = 1;
+    self.hp = self.maxHP;
+    self.dX = 0;
+    self.dY = 0;
+    self.type = @"Solid";
+    self.index = @"Instance"; //This needs to be changed.
+    self.enemy = @"Not"; //For enemies, it's different.
+    return self;
+}
+
 -(void) extraCollisionWithDegree:(int)dg{
     
 }
+
 -(Instance *) collisionWithInstance:(Instance *)i{
     if ([self.type isEqualToString: @"Solid"]){
         if ([i.type isEqualToString: @"Solid"]){

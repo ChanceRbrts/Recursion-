@@ -11,6 +11,7 @@
 #include "Instance.h"
 @interface PlatformerInstance : Instance
 @property float terminalVelocity;
+@property bool onGround;
 -(void) gravity;
 @end
 

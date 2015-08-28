@@ -9,8 +9,9 @@
 #ifndef Recursion__Instance_h
 #define Recursion__Instance_h
 @interface Instance : NSObject
-@property float x, y, dX, dY, w, h;
-@property NSString *type;
+@property float x, y, dX, dY, w, h, hp, maxHP;
+@property NSString *type, *index, *enemy;
+-(id)initWithX:(float)X y:(float)Y;
 -(void) extraCollisionWithDegree:(int)dg;
 -(Instance *) collisionWithInstance:(Instance *)i;
 -(void) update;

@@ -6,18 +6,7 @@
 //  Copyright (c) 2015 Chance Roberts. All rights reserved.
 //
 
-enum conKeys{
-    LEFT=0,
-    RIGHT,
-    UP,
-    DOWN,
-    A,
-    B,
-    C,
-    D,
-    START,
-    SELECT
-};
+#include "ControlEnum.h"
 
 @interface Controls : NSObject
 @property NSMutableArray* controlsPressed;
