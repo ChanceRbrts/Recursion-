@@ -10,6 +10,6 @@
 #define Recursion__SpriteCreator_h
 #import <SpriteKit/SpriteKit.h>
 @interface SpriteCreator : NSObject
--(SKNode *)createNodeWithArray: (NSMutableArray*)array;
+-(SKSpriteNode *)createNodeWithImage: (NSString *)imageName x: (float)X y: (float)Y w: (float)W h: (float)H rotation: (float)Rot view: (SKView *)view;
 @end
 #endif
