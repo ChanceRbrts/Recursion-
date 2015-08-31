@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Solid.h"
 @implementation Solid
--(NSMutableArray *) draw{ //This will, of course, eventually be different!
-    return [[NSMutableArray alloc] init];
+-(id)initWithX:(float)X y:(float)Y{
+    self = [super initWithX: X y: Y];
+    self.index = @"Solid";
+    return self;
+}
+-(NSArray *) draw{ //This will, of course, eventually be different!
+    return [[NSArray alloc] init];
 }
 @end

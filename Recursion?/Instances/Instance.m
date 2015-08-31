@@ -21,7 +21,7 @@
     self.dY = 0;
     self.type = @"Solid";
     self.index = @"Instance"; //This needs to be changed.
-    self.enemy = @"Not"; //For enemies, it's different.
+    self.enemy = @"Not"; 
     return self;
 }
 

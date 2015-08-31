@@ -17,6 +17,7 @@
 		1541D9791B87C61400E5CDE5 /* Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D9781B87C61400E5CDE5 /* Controls.m */; };
 		159F65E81B90B4AD00791F56 /* Room1Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 159F65E71B90B4AD00791F56 /* Room1Player.m */; };
 		15A37C291B8FC36300325096 /* PlatformerInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A37C281B8FC36300325096 /* PlatformerInstance.m */; };
+		15E906461B94CB340060D283 /* Room1Hazard.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E906451B94CB340060D283 /* Room1Hazard.m */; };
 		15EDF95F1B90FBD8001927A8 /* Solid.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDF95E1B90FBD8001927A8 /* Solid.m */; };
 		15EDF9621B90FDB5001927A8 /* SpriteCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDF9611B90FDB5001927A8 /* SpriteCreator.m */; };
 		15EFCA501B8EBC5F0018FB65 /* objManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFCA4F1B8EBC5F0018FB65 /* objManager.m */; };
@@ -49,10 +50,13 @@
 		1541D96E1B87C49C00E5CDE5 /* Recursion_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recursion_Tests.m; sourceTree = "<group>"; };
 		1541D9781B87C61400E5CDE5 /* Controls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controls.m; sourceTree = "<group>"; };
 		1541D97A1B87C62800E5CDE5 /* Controls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
+		15958DF61B94A79F00213466 /* Room1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1.h; path = Rooms/Room1.h; sourceTree = "<group>"; };
 		159F65E61B90B48E00791F56 /* Room1Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Player.h; path = "Instances/Room 1/Room1Player.h"; sourceTree = "<group>"; };
 		159F65E71B90B4AD00791F56 /* Room1Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Player.m; path = "Instances/Room 1/Room1Player.m"; sourceTree = "<group>"; };
 		15A37C271B8FC34F00325096 /* PlatformerInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlatformerInstance.h; path = Instances/PlatformerInstance.h; sourceTree = "<group>"; };
 		15A37C281B8FC36300325096 /* PlatformerInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformerInstance.m; path = Instances/PlatformerInstance.m; sourceTree = "<group>"; };
+		15E906441B94CB1A0060D283 /* Room1Hazard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Hazard.h; path = "Instances/Room 1/Room1Hazard.h"; sourceTree = "<group>"; };
+		15E906451B94CB340060D283 /* Room1Hazard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Hazard.m; path = "Instances/Room 1/Room1Hazard.m"; sourceTree = "<group>"; };
 		15EB01601B90B6DA005CA0DD /* ControlEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlEnum.h; sourceTree = "<group>"; };
 		15EDF95D1B90FAC1001927A8 /* Solid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Solid.h; path = Instances/Solid.h; sourceTree = "<group>"; };
 		15EDF95E1B90FBD8001927A8 /* Solid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Solid.m; path = Instances/Solid.m; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		1541D9521B87C49C00E5CDE5 /* Recursion? */ = {
 			isa = PBXGroup;
 			children = (
+				15958DF51B94A78200213466 /* Rooms */,
 				15EFCA4D1B8EBB800018FB65 /* Instances */,
 				1541D9551B87C49C00E5CDE5 /* AppDelegate.h */,
 				1541D9561B87C49C00E5CDE5 /* AppDelegate.m */,
@@ -147,11 +152,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		15958DF51B94A78200213466 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				15958DF61B94A79F00213466 /* Room1.h */,
+			);
+			name = Rooms;
+			sourceTree = "<group>";
+		};
 		159F65E41B90B42800791F56 /* Room 1 */ = {
 			isa = PBXGroup;
 			children = (
 				159F65E61B90B48E00791F56 /* Room1Player.h */,
 				159F65E71B90B4AD00791F56 /* Room1Player.m */,
+				15E906441B94CB1A0060D283 /* Room1Hazard.h */,
+				15E906451B94CB340060D283 /* Room1Hazard.m */,
 			);
 			name = "Room 1";
 			sourceTree = "<group>";
@@ -279,6 +294,7 @@
 				159F65E81B90B4AD00791F56 /* Room1Player.m in Sources */,
 				15EFCA501B8EBC5F0018FB65 /* objManager.m in Sources */,
 				1541D95C1B87C49C00E5CDE5 /* GameScene.m in Sources */,
+				15E906461B94CB340060D283 /* Room1Hazard.m in Sources */,
 				15EDF9621B90FDB5001927A8 /* SpriteCreator.m in Sources */,
 				1541D9571B87C49C00E5CDE5 /* AppDelegate.m in Sources */,
 				15A37C291B8FC36300325096 /* PlatformerInstance.m in Sources */,

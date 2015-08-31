@@ -11,6 +11,8 @@
 #import "objManager.h"
 
 @interface GameScene : SKScene
+/**@brief The object that maintains controls.*/
 @property Controls* c;
+/**@brief The object that maintains objects.*/
 @property objManager* OBJMAN;
 @end

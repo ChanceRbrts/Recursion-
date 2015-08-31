@@ -9,9 +9,13 @@
 #ifndef Recursion__PlatformerInstance_h
 #define Recursion__PlatformerInstance_h
 #include "Instance.h"
+/**@brief An instance that has platformer elements (Gravity)*/
 @interface PlatformerInstance : Instance
+/**@brief How fast the object can fall.*/
 @property float terminalVelocity;
+/**@brief Is the object on the ground?*/
 @property bool onGround;
+/**@brief Increase the dY as if gravity has applied.*/
 -(void) gravity;
 @end
 

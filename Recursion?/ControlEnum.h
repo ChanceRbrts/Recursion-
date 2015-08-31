@@ -8,6 +8,7 @@
 //Probably (Definitely) Bad Practice. Oh well... :|
 #ifndef Recursion__ControlEnum_h
 #define Recursion__ControlEnum_h
+/**@brief Directs to the controls(Pressed) array(s)*/
 enum conKeys{
     LEFT=0,
     RIGHT,
