@@ -41,14 +41,14 @@
 -(void) extraCollisionWithDegree:(int)dg;
 /**@brief Collision check with another instance.
  @param i The instance in question.*/
--(Instance *) collisionWithInstance:(Instance *)i;
+-(void) collisionWithInstance:(Instance *)i;
 /**@brief The command that updates the states of the instances.*/
 -(void) update;
 /**@brief AI of non-controlled instances.*/
 -(void) ai;
 /**@brief Sends out an array of things for the SpriteCreator to create a node for the funciton.*/
--(NSArray *) draw;
-/**Actually moves the objects. TO BE RUN AT THE END OF THE MAIN UPDATE LOOP.*/
+-(NSArray *) drawWithViewX: (float) vX viewY: (float) vY;
+/**@brief Actually moves the objects. TO BE RUN AT THE END OF THE MAIN UPDATE LOOP.*/
 -(void) finishUpdate;
 @end
 

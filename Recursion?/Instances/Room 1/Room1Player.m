@@ -19,18 +19,21 @@
 
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     [super update];
+    //Moving Left
     if (con[LEFT] && !con[RIGHT]){
         self.dX -= 0.25;
         if ((self.dX < -4 && !con[B]) || (self.dX < -8 && con[B])){
             self.dX += 0.25;
         }
     }
+    //Moving Right
     else if (con[RIGHT] && !con[LEFT]){
         self.dX += 0.25;
         if ((self.dX > 4 && !con[B]) || (self.dX  > 8 && con[B])){
             self.dX -= 0.25;
         }
     }
+    //Stopping
     else{
         if (self.dX > 0.5){
             self.dX -= 0.5;
@@ -42,6 +45,7 @@
             self.dX = 0;
         }
     }
+    //Jumping
     if (conPressed[A] && self.onGround){
         if (self.dX > 0){
             self.dY = -4-self.dX/2;
@@ -49,6 +53,68 @@
         else{
             self.dY = -4+self.dX/2;
         }
+    }
+    //Walljumping
+    else if (conPressed[A]){
+        if (self.againstLeftWall && con[LEFT]){
+            if (con[UP] && !con[DOWN]){
+                self.dY = -8;
+                self.dX = 2;
+            }
+            else if (con[DOWN] && !con[UP]){
+                self.dY = 2;
+                self.dX = 2;
+            }
+            else if (con[RIGHT]){
+                self.dY = 0;
+                self.dX = 10;
+            }
+            else{
+                self.dY = -4;
+                self.dX = 4;
+            }
+        }
+        else if (self.againstRightWall && con[RIGHT]){
+            if (con[UP] && !con[DOWN]){
+                self.dY = -8;
+                self.dX = -2;
+            }
+            else if (con[DOWN] && !con[UP]){
+                self.dY = 2;
+                self.dX = -2;
+            }
+            else if (con[RIGHT]){
+                self.dY = 0;
+                self.dX = -10;
+            }
+            else{
+                self.dY = -4;
+                self.dX = -4;
+            }
+        }
+    }
+    //Terminal Velocity changes as you are sliding down the wall.
+    if ((self.againstLeftWall && con[LEFT]) || (self.againstRightWall && con[RIGHT])){
+        self.terminalVelocity = 4;
+    }
+    else{
+        self.terminalVelocity = 16;
+    }
+}
+
+-(void)finishUpdate{
+    [super finishUpdate];
+    self.againstLeftWall = false;
+    self.againstRightWall = false;
+}
+
+-(void) extraCollisionWithDegree:(int)dg{
+    [super extraCollisionWithDegree:dg];
+    if (dg == 0){
+        self.againstRightWall = true;
+    }
+    else if (dg == 180){
+        self.againstLeftWall = true;
     }
 }
 @end

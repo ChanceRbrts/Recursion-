@@ -14,7 +14,4 @@
     self.index = @"Solid";
     return self;
 }
--(NSArray *) draw{ //This will, of course, eventually be different!
-    return [[NSArray alloc] init];
-}
 @end

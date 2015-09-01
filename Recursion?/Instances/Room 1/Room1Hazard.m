@@ -16,13 +16,20 @@
     self.enemy = @"All-Sides";
     return self;
 }
-
--(NSArray *)draw{
+-(void) update{
+    [super update];
     self.frame += 1;
     if (self.frame > 8){
         self.frame = 1;
     }
-    return(@[]);
+}
+
+-(NSArray *)drawWithViewX:(float)vX viewY:(float)vY{
+    //YAAAAAAAAAAAAAAAAAAY NSArray...... :|
+    return(@[[NSString stringWithFormat: @"Room1Hazard%d",self.frame],
+             [NSNumber numberWithFloat: self.x-vX],[NSNumber numberWithFloat: self.y-vY],
+             [NSNumber numberWithFloat: self.w], [NSNumber numberWithFloat: self.h],
+             [NSNumber numberWithFloat: 0]]);
 }
 
 @end

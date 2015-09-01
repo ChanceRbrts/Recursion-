@@ -17,6 +17,15 @@
 		1541D9791B87C61400E5CDE5 /* Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D9781B87C61400E5CDE5 /* Controls.m */; };
 		159F65E81B90B4AD00791F56 /* Room1Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 159F65E71B90B4AD00791F56 /* Room1Player.m */; };
 		15A37C291B8FC36300325096 /* PlatformerInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A37C281B8FC36300325096 /* PlatformerInstance.m */; };
+		15E5D4531B953C0F00516E95 /* Room1Hazard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44B1B953C0F00516E95 /* Room1Hazard1.png */; };
+		15E5D4541B953C0F00516E95 /* Room1Hazard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44C1B953C0F00516E95 /* Room1Hazard2.png */; };
+		15E5D4551B953C0F00516E95 /* Room1Hazard3.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44D1B953C0F00516E95 /* Room1Hazard3.png */; };
+		15E5D4561B953C0F00516E95 /* Room1Hazard4.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44E1B953C0F00516E95 /* Room1Hazard4.png */; };
+		15E5D4571B953C0F00516E95 /* Room1Hazard5.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44F1B953C0F00516E95 /* Room1Hazard5.png */; };
+		15E5D4581B953C0F00516E95 /* Room1Hazard6.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D4501B953C0F00516E95 /* Room1Hazard6.png */; };
+		15E5D4591B953C0F00516E95 /* Room1Hazard7.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D4511B953C0F00516E95 /* Room1Hazard7.png */; };
+		15E5D45A1B953C0F00516E95 /* Room1Hazard8.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D4521B953C0F00516E95 /* Room1Hazard8.png */; };
+		15E5D45C1B954A0900516E95 /* Room1.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E5D45B1B954A0900516E95 /* Room1.m */; };
 		15E906461B94CB340060D283 /* Room1Hazard.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E906451B94CB340060D283 /* Room1Hazard.m */; };
 		15EDF95F1B90FBD8001927A8 /* Solid.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDF95E1B90FBD8001927A8 /* Solid.m */; };
 		15EDF9621B90FDB5001927A8 /* SpriteCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDF9611B90FDB5001927A8 /* SpriteCreator.m */; };
@@ -50,11 +59,20 @@
 		1541D96E1B87C49C00E5CDE5 /* Recursion_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recursion_Tests.m; sourceTree = "<group>"; };
 		1541D9781B87C61400E5CDE5 /* Controls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controls.m; sourceTree = "<group>"; };
 		1541D97A1B87C62800E5CDE5 /* Controls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
-		15958DF61B94A79F00213466 /* Room1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1.h; path = Rooms/Room1.h; sourceTree = "<group>"; };
 		159F65E61B90B48E00791F56 /* Room1Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Player.h; path = "Instances/Room 1/Room1Player.h"; sourceTree = "<group>"; };
 		159F65E71B90B4AD00791F56 /* Room1Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Player.m; path = "Instances/Room 1/Room1Player.m"; sourceTree = "<group>"; };
 		15A37C271B8FC34F00325096 /* PlatformerInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlatformerInstance.h; path = Instances/PlatformerInstance.h; sourceTree = "<group>"; };
 		15A37C281B8FC36300325096 /* PlatformerInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformerInstance.m; path = Instances/PlatformerInstance.m; sourceTree = "<group>"; };
+		15E5D44B1B953C0F00516E95 /* Room1Hazard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard1.png; path = Sprites/Room1Hazard/Room1Hazard1.png; sourceTree = "<group>"; };
+		15E5D44C1B953C0F00516E95 /* Room1Hazard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard2.png; path = Sprites/Room1Hazard/Room1Hazard2.png; sourceTree = "<group>"; };
+		15E5D44D1B953C0F00516E95 /* Room1Hazard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard3.png; path = Sprites/Room1Hazard/Room1Hazard3.png; sourceTree = "<group>"; };
+		15E5D44E1B953C0F00516E95 /* Room1Hazard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard4.png; path = Sprites/Room1Hazard/Room1Hazard4.png; sourceTree = "<group>"; };
+		15E5D44F1B953C0F00516E95 /* Room1Hazard5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard5.png; path = Sprites/Room1Hazard/Room1Hazard5.png; sourceTree = "<group>"; };
+		15E5D4501B953C0F00516E95 /* Room1Hazard6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard6.png; path = Sprites/Room1Hazard/Room1Hazard6.png; sourceTree = "<group>"; };
+		15E5D4511B953C0F00516E95 /* Room1Hazard7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard7.png; path = Sprites/Room1Hazard/Room1Hazard7.png; sourceTree = "<group>"; };
+		15E5D4521B953C0F00516E95 /* Room1Hazard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard8.png; path = Sprites/Room1Hazard/Room1Hazard8.png; sourceTree = "<group>"; };
+		15E5D45B1B954A0900516E95 /* Room1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1.m; path = Rooms/Room1.m; sourceTree = "<group>"; };
+		15E5D45D1B954B0E00516E95 /* Room1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room1.h; path = Rooms/Room1.h; sourceTree = "<group>"; };
 		15E906441B94CB1A0060D283 /* Room1Hazard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Hazard.h; path = "Instances/Room 1/Room1Hazard.h"; sourceTree = "<group>"; };
 		15E906451B94CB340060D283 /* Room1Hazard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Hazard.m; path = "Instances/Room 1/Room1Hazard.m"; sourceTree = "<group>"; };
 		15EB01601B90B6DA005CA0DD /* ControlEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlEnum.h; sourceTree = "<group>"; };
@@ -107,6 +125,7 @@
 		1541D9521B87C49C00E5CDE5 /* Recursion? */ = {
 			isa = PBXGroup;
 			children = (
+				15E5D4491B953B6600516E95 /* Sprites */,
 				15958DF51B94A78200213466 /* Rooms */,
 				15EFCA4D1B8EBB800018FB65 /* Instances */,
 				1541D9551B87C49C00E5CDE5 /* AppDelegate.h */,
@@ -155,7 +174,8 @@
 		15958DF51B94A78200213466 /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
-				15958DF61B94A79F00213466 /* Room1.h */,
+				15E5D45D1B954B0E00516E95 /* Room1.h */,
+				15E5D45B1B954A0900516E95 /* Room1.m */,
 			);
 			name = Rooms;
 			sourceTree = "<group>";
@@ -169,6 +189,29 @@
 				15E906451B94CB340060D283 /* Room1Hazard.m */,
 			);
 			name = "Room 1";
+			sourceTree = "<group>";
+		};
+		15E5D4491B953B6600516E95 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				15E5D44A1B953B7700516E95 /* Room1Hazard */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		15E5D44A1B953B7700516E95 /* Room1Hazard */ = {
+			isa = PBXGroup;
+			children = (
+				15E5D44B1B953C0F00516E95 /* Room1Hazard1.png */,
+				15E5D44C1B953C0F00516E95 /* Room1Hazard2.png */,
+				15E5D44D1B953C0F00516E95 /* Room1Hazard3.png */,
+				15E5D44E1B953C0F00516E95 /* Room1Hazard4.png */,
+				15E5D44F1B953C0F00516E95 /* Room1Hazard5.png */,
+				15E5D4501B953C0F00516E95 /* Room1Hazard6.png */,
+				15E5D4511B953C0F00516E95 /* Room1Hazard7.png */,
+				15E5D4521B953C0F00516E95 /* Room1Hazard8.png */,
+			);
+			name = Room1Hazard;
 			sourceTree = "<group>";
 		};
 		15EFCA4D1B8EBB800018FB65 /* Instances */ = {
@@ -267,7 +310,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E5D45A1B953C0F00516E95 /* Room1Hazard8.png in Resources */,
 				1541D95E1B87C49C00E5CDE5 /* GameScene.sks in Resources */,
+				15E5D4561B953C0F00516E95 /* Room1Hazard4.png in Resources */,
+				15E5D4531B953C0F00516E95 /* Room1Hazard1.png in Resources */,
+				15E5D4581B953C0F00516E95 /* Room1Hazard6.png in Resources */,
+				15E5D4541B953C0F00516E95 /* Room1Hazard2.png in Resources */,
+				15E5D4551B953C0F00516E95 /* Room1Hazard3.png in Resources */,
+				15E5D4571B953C0F00516E95 /* Room1Hazard5.png in Resources */,
+				15E5D4591B953C0F00516E95 /* Room1Hazard7.png in Resources */,
 				1541D9601B87C49C00E5CDE5 /* Images.xcassets in Resources */,
 				1541D9631B87C49C00E5CDE5 /* MainMenu.xib in Resources */,
 			);
@@ -287,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E5D45C1B954A0900516E95 /* Room1.m in Sources */,
 				15EDF95F1B90FBD8001927A8 /* Solid.m in Sources */,
 				1541D9591B87C49C00E5CDE5 /* main.m in Sources */,
 				1541D9791B87C61400E5CDE5 /* Controls.m in Sources */,

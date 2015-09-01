@@ -29,7 +29,7 @@
     
 }
 
--(Instance *) collisionWithInstance:(Instance *)i{
+-(void) collisionWithInstance:(Instance *)i{
     if ([self.type isEqualToString: @"Solid"]){
         if ([i.type isEqualToString: @"Solid"]){
             if (self.x+self.dX+self.w > i.x+i.dX && self.x+self.w <= i.x+i.dX && self.y+self.dY+self.h >= i.y+i.dY && self.y+self.dY <= i.y+i.h+i.dY){ //Collides on the right side.
@@ -58,7 +58,6 @@
             }
         }
     }
-    return i;
 }
 -(void) update{
     [self ai];
@@ -73,7 +72,7 @@
     
 }
 
--(NSMutableArray *) draw{
-    return [[NSMutableArray alloc] init];
+-(NSArray *) drawWithViewX:(float)vX viewY:(float)vY{
+    return [[NSArray alloc] init];
 }
 @end

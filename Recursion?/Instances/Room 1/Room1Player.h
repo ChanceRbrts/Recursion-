@@ -12,6 +12,10 @@
 #include "ControlEnum.h"
 /**@brief The player character in Layer 1*/
 @interface Room1Player : PlatformerInstance
+/**@brief Is the player against a wall on the right?*/
+@property bool againstRightWall;
+/**@brief Is the player against a wall on the left?*/
+@property bool againstLeftWall;
 /**@brief An update function that requires keyboard commands.
  @param con The controls that are being held.
  @param conPressed The controls that are being pressed.*/

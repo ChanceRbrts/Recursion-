@@ -11,6 +11,7 @@
 @implementation PlatformerInstance
 -(id)initWithX:(float)X y:(float)Y{
     self = [super initWithX:X y:Y];
+    self.terminalVelocity = 16;
     self.onGround = false;
     return self;
 }

@@ -11,15 +11,6 @@
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {
-    /*/* Setup your scene here 
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    
-    myLabel.text = @"Hello, World!";
-    myLabel.fontSize = 65;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
-    
-    [self addChild:myLabel];*/
     self.c = [[Controls alloc] initWithMore];
     self.OBJMAN = [[objManager alloc] init];
 }
@@ -35,8 +26,18 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     [self.c checkPressed];
-    [self.OBJMAN update];
+    [self.OBJMAN updateWithControlsHeld: self.c.controlsHeld controlsPressed:self.c.controlsPressed];
     [self.c resetControls];
+    [self setupDrawWithInstructions: [self.OBJMAN draw]];
 }
 
+-(void)setupDrawWithInstructions:(NSArray *)instru{
+    [self removeAllChildren];
+    SpriteCreator *sc = [[SpriteCreator alloc] init];
+    for (int i = 0; i < instru.count; i++){
+        if (((NSArray *)instru[i]).count > 5){
+            [self addChild: [sc createNodeWithImage:(NSString *)instru[i][0] x: [((NSNumber *)instru[i][1]) floatValue] y: [((NSNumber *)instru[i][2]) floatValue] w: [((NSNumber *)instru[i][3]) floatValue] h: [((NSNumber *)instru[i][4]) floatValue] rotation: [((NSNumber *)instru[i][5]) floatValue] view: self.view]];
+        }
+    }
+}
 @end
