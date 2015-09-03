@@ -37,6 +37,7 @@
     scene.scaleMode = SKSceneScaleModeAspectFill;
     scene.backgroundColor = [SKColor colorWithRed:1 green:1 blue:1 alpha:1];
     [self.skView presentScene:scene];
+    self.skView.showsNodeCount = YES;
     self.skView.showsFPS = YES;
 }
 
