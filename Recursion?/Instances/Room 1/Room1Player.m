@@ -20,18 +20,39 @@
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     [super update];
     //Moving Left
-    //NSLog([NSString stringWithFormat: @"%@,%@", con[LEFT], con[RIGHT]]);
     if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO]){
         self.dX -= 0.25;
-        if ((self.dX < -4 && !con[B]) || (self.dX < -8 && con[B])){
-            self.dX += 0.25;
+        if ((self.dX < -4 && [con[B] isEqual: @NO]) || (self.dX < -8 && [con[B] isEqual: @YES])){
+            if (self.dX <= -4.5 && [con[B] isEqual: @NO]){
+                self.dX += 0.5;
+            }
+            else if ([con[B] isEqual: @NO]){
+                self.dX = -4;
+            }
+            else if (self.dX <= -8.5){
+                self.dX += 0.5;
+            }
+            else{
+                self.dX = -8;
+            }
         }
     }
     //Moving Right
     else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO]){
         self.dX += 0.25;
-        if ((self.dX > 4 && !con[B]) || (self.dX  > 8 && con[B])){
-            self.dX -= 0.25;
+        if ((self.dX > 4 && [con[B] isEqual: @NO]) || (self.dX  > 8 && [con[B] isEqual: @YES])){
+            if ((self.dX >= 4.5 && [con[B] isEqual: @NO])){
+                self.dX -= 0.5;
+            }
+            else if ([con[B] isEqual: @NO]){
+                self.dX = 4;
+            }
+            else if (self.dX >= 8.5){
+                self.dX -= 0.5;
+            }
+            else{
+                self.dX = 8;
+            }
         }
     }
     //Stopping
@@ -55,8 +76,21 @@
             self.dY = -4+self.dX/2;
         }
     }
+    //Terminal Velocity changes as you are sliding down the wall.
+    if ((self.againstLeftWall && [con[LEFT] isEqual: @YES]) || (self.againstRightWall && [con[RIGHT] isEqual: @YES])){
+        self.terminalVelocity = 4;
+        if (self.againstLeftWall && [con[LEFT] isEqual: @YES]){
+            self.dX = -0.5; //Just to keep yourself on the wall.
+        }
+        else{
+            self.dX = 0.5; //Just to keep yourself on the wall.
+        }
+    }
+    else{
+        self.terminalVelocity = 16;
+    }
     //Walljumping
-    else if ([conPressed[A] isEqual: @YES]){
+    if ([conPressed[A] isEqual: @YES]){
         if (self.againstLeftWall && con[LEFT]){
             if ([con[UP] isEqual: @YES] && [con[DOWN] isEqual: @NO]){
                 self.dY = -8;
@@ -67,13 +101,14 @@
                 self.dX = 2;
             }
             else if ([con[RIGHT] isEqual: @YES]){
-                self.dY = 0;
+                self.dY = -2;
                 self.dX = 10;
             }
             else{
-                self.dY = -4;
+                self.dY = -6;
                 self.dX = 4;
             }
+            self.x += 1;
         }
         else if (self.againstRightWall && [con[RIGHT] isEqual: @YES]){
             if (con[UP] && !con[DOWN]){
@@ -84,29 +119,23 @@
                 self.dY = 2;
                 self.dX = -2;
             }
-            else if ([con[RIGHT] isEqual: @YES]){
-                self.dY = 0;
+            else if ([con[LEFT] isEqual: @YES]){
+                self.dY = -2;
                 self.dX = -10;
             }
             else{
-                self.dY = -4;
+                self.dY = -6;
                 self.dX = -4;
             }
+            self.x -= 1;
         }
     }
-    //Terminal Velocity changes as you are sliding down the wall.
-    if ((self.againstLeftWall && con[LEFT]) || (self.againstRightWall && con[RIGHT])){
-        self.terminalVelocity = 4;
-    }
-    else{
-        self.terminalVelocity = 16;
-    }
+    self.againstLeftWall = false;
+    self.againstRightWall = false;
 }
 
 -(void)finishUpdate{
     [super finishUpdate];
-    self.againstLeftWall = false;
-    self.againstRightWall = false;
 }
 
 -(void) extraCollisionWithDegree:(int)dg{

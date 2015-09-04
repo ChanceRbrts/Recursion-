@@ -104,7 +104,7 @@
                  @"0000000000S000000000",
                  @"SSSSSS0000S000000000",
                  @"SSSSSS0000S000000000",
-                 @"SSSSSS0000S000000000",
+                 @"SSSSSS00000000000000",
                  @"SSSSSS00000000000000",
                  @"SSSSSS00000000000000",
                  @"SSSSSS00000000000000",
@@ -115,8 +115,7 @@
                  @"SSSSSSSSSSSSSSSSSSSS",
                  ];
     /**@brief The layout of the room.*/
-    //self.Room1 = @[@[Room1_AA,Room1_AB,Room1_AC,Room1_AD,Room1_AE,Room1_AF]];
-    self.Room1 = @[@[Room1_AA]];
+    self.Room1 = @[@[Room1_AA,Room1_AB,Room1_AC,Room1_AD,Room1_AE,Room1_AF]];
     return self;
 }
 @end

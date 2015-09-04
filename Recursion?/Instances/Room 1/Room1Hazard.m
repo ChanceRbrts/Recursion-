@@ -18,7 +18,7 @@
 }
 -(void) update{
     [super update];
-    self.frame += 1;
+    self.frame += 0.25;
     if (self.frame > 8){
         self.frame = 1;
     }
@@ -26,7 +26,7 @@
 
 -(NSArray *)drawWithViewX:(float)vX viewY:(float)vY{
     //YAAAAAAAAAAAAAAAAAAY NSArray...... :|
-    return(@[[NSString stringWithFormat: @"Room1Hazard%d",self.frame],
+    return(@[[NSString stringWithFormat: @"Room1Hazard%d",(int)self.frame],
              [NSNumber numberWithFloat: self.x-vX],[NSNumber numberWithFloat: self.y-vY],
              [NSNumber numberWithFloat: self.w], [NSNumber numberWithFloat: self.h],
              [NSNumber numberWithFloat: 0]]);

@@ -25,9 +25,9 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    [self.c checkPressed];
     [self.OBJMAN updateWithControlsHeld: self.c.controlsHeld controlsPressed:self.c.controlsPressed];
     [self.c resetControls];
+    [self.c checkPressed];
     [self setupDrawWithInstructions: [self.OBJMAN draw]];
 }
 

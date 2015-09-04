@@ -13,6 +13,7 @@
     self = [super initWithX:X y:Y];
     self.terminalVelocity = 16;
     self.onGround = false;
+    self.prevOnGround = false;
     return self;
 }
 
@@ -23,7 +24,15 @@
 
 -(void) finishUpdate{
     [super finishUpdate];
-    self.onGround = false;
+    if (self.onGround){
+        if (self.prevOnGround){
+            self.onGround = false;
+            self.prevOnGround = false;
+        }
+        else{
+            self.prevOnGround = true;
+        }
+    }
 }
 
 -(void) gravity{

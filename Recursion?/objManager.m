@@ -29,12 +29,14 @@
     if (self.viewY < 0){
         self.viewY = 0;
     }
+    if (self.viewY > 640*self.room1Objects.count-633){
+        self.viewY = 640*self.room1Objects.count-633;
+    }
 }
 
 -(void) updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     if (self.room == 1){
         if (self.viewX == -9999 && self.viewY == -9999){
-
             [self changeViewXandYWithInstance: self.player1];
         }
     }
@@ -69,7 +71,7 @@
        [self.player1 collisionWithInstance: ((Instance *)(r1Objects[i]))];
     }
     for (int i = 0; i < r1Objects.count; i++){
-        if (![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Solid"]){
+        if (![((Instance *)([r1Objects objectAtIndex: i])).type isEqualToString: @"Solid"]){
             for (int j = 0; j < r1Objects.count; j++){
                 if (i != j){
                     [((Instance *)([r1Objects objectAtIndex: i])) collisionWithInstance: ((Instance *)([self.room1Objects objectAtIndex: j]))];

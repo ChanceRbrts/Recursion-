@@ -134,8 +134,9 @@
 
 -(void) resetControls{
     for (int i = 0; i < [self.controlsPressed count]; i++){
-        if ([self.controlsLastPressed isEqual: @YES]){
+        if ([self.controlsLastPressed[i] isEqual: @YES]){
             self.controlsPressed[i] = @NO;
+            self.controlsLastPressed[i] = @NO;
         }
     }
 }

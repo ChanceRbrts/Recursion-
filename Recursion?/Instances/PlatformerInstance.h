@@ -14,7 +14,7 @@
 /**@brief How fast the object can fall.*/
 @property float terminalVelocity;
 /**@brief Is the object on the ground?*/
-@property bool onGround;
+@property bool onGround,prevOnGround;
 /**@brief Increase the dY as if gravity has applied.*/
 -(void) gravity;
 @end

@@ -12,6 +12,6 @@
 /**@brief A hazard object that harms the player.*/
 @interface Room1Hazard : Instance
 /**@brief The frame of animation.*/
-@property int frame;
+@property float frame;
 @end
 #endif
