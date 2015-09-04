@@ -20,14 +20,15 @@
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     [super update];
     //Moving Left
-    if (con[LEFT] && !con[RIGHT]){
+    //NSLog([NSString stringWithFormat: @"%@,%@", con[LEFT], con[RIGHT]]);
+    if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO]){
         self.dX -= 0.25;
         if ((self.dX < -4 && !con[B]) || (self.dX < -8 && con[B])){
             self.dX += 0.25;
         }
     }
     //Moving Right
-    else if (con[RIGHT] && !con[LEFT]){
+    else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO]){
         self.dX += 0.25;
         if ((self.dX > 4 && !con[B]) || (self.dX  > 8 && con[B])){
             self.dX -= 0.25;
@@ -46,7 +47,7 @@
         }
     }
     //Jumping
-    if (conPressed[A] && self.onGround){
+    if ([conPressed[A] isEqual: @YES] && self.onGround){
         if (self.dX > 0){
             self.dY = -4-self.dX/2;
         }
@@ -55,17 +56,17 @@
         }
     }
     //Walljumping
-    else if (conPressed[A]){
+    else if ([conPressed[A] isEqual: @YES]){
         if (self.againstLeftWall && con[LEFT]){
-            if (con[UP] && !con[DOWN]){
+            if ([con[UP] isEqual: @YES] && [con[DOWN] isEqual: @NO]){
                 self.dY = -8;
                 self.dX = 2;
             }
-            else if (con[DOWN] && !con[UP]){
+            else if ([con[DOWN] isEqual: @YES] && [con[UP] isEqual: @NO]){
                 self.dY = 2;
                 self.dX = 2;
             }
-            else if (con[RIGHT]){
+            else if ([con[RIGHT] isEqual: @YES]){
                 self.dY = 0;
                 self.dX = 10;
             }
@@ -74,16 +75,16 @@
                 self.dX = 4;
             }
         }
-        else if (self.againstRightWall && con[RIGHT]){
+        else if (self.againstRightWall && [con[RIGHT] isEqual: @YES]){
             if (con[UP] && !con[DOWN]){
                 self.dY = -8;
                 self.dX = -2;
             }
-            else if (con[DOWN] && !con[UP]){
+            else if ([con[DOWN] isEqual: @YES] && [con[UP] isEqual: @NO]){
                 self.dY = 2;
                 self.dX = -2;
             }
-            else if (con[RIGHT]){
+            else if ([con[RIGHT] isEqual: @YES]){
                 self.dY = 0;
                 self.dX = -10;
             }
@@ -116,5 +117,13 @@
     else if (dg == 180){
         self.againstLeftWall = true;
     }
+}
+
+-(NSArray *)drawWithViewX:(float)vX viewY:(float)vY{
+    return(@[@"SolidWallPlaceholder",
+             [NSNumber numberWithFloat: self.x-vX],[NSNumber numberWithFloat: self.y-vY],
+             [NSNumber numberWithFloat: self.w], [NSNumber numberWithFloat: self.h],
+             [NSNumber numberWithFloat: 0]]);
+    
 }
 @end

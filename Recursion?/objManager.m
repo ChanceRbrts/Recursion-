@@ -21,11 +21,11 @@
 }
 
 -(void)changeViewXandYWithInstance: (Instance *)i{
-    self.viewX = i.x-320;
+    self.viewX = i.x-313;
     if (self.viewX < 0){
         self.viewX = 0;
     }
-    self.viewY = i.y-240;
+    self.viewY = i.y-313;
     if (self.viewY < 0){
         self.viewY = 0;
     }
@@ -34,14 +34,7 @@
 -(void) updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     if (self.room == 1){
         if (self.viewX == -9999 && self.viewY == -9999){
-            self.viewX = self.player1.x-320;
-            if (self.viewX < 0){
-                self.viewX = 0;
-            }
-            self.viewY = self.player1.y-240;
-            if (self.viewY < 0){
-                self.viewY = 0;
-            }
+
             [self changeViewXandYWithInstance: self.player1];
         }
     }
@@ -54,7 +47,9 @@
 -(void) updateLayer1WithControlsHeld:(NSArray *)con controlsPressed:(NSArray *)conPressed{
     self.mainCol = self.player1.x/640;
     self.mainRow = self.player1.y/480;
-    [self.player1 updateWithControlsHeld:con controlsPressed:conPressed];
+    if (self.room == 1){
+        [self.player1 updateWithControlsHeld:con controlsPressed:conPressed];
+    }
     NSMutableArray *r1Objects = [[NSMutableArray alloc] init];
     for (int r = self.mainRow-1; r <= self.mainRow+1; r++){
         if (r >= 0 && r < self.room1Objects.count){
@@ -96,6 +91,7 @@
         obj = self.room1Objects;
         self.mainCol = self.player1.x/640;
         self.mainRow = self.player1.y/480;
+        [instru addObject: [self.player1 drawWithViewX:self.viewX viewY:self.viewY]];
     }
     NSMutableArray *drObjects = [[NSMutableArray alloc] init];
     for (int r = self.mainRow-1; r <= self.mainRow+1; r++){
@@ -130,15 +126,15 @@
                 NSString *row = (NSString *)roomCol[y];
                 for (int x = 0; x < row.length; x++){
                     //There HAS to be another way to do get one character... :|
-                    if ([[[row substringFromIndex:i] substringToIndex: 1] isEqualToString: @"S"]){
+                    if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"S"]){
                         Solid *s = [[Solid alloc] initWithX: j*20+x y:i*15+y];
                         [objects addObject: s];
                     }
-                    else if([[[row substringFromIndex:i] substringToIndex: 1] isEqualToString: @"H"]){
+                    else if([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"H"]){
                         Room1Hazard *h = [[Room1Hazard alloc] initWithX: j*20+x y:i*15+y];
                         [objects addObject: h];
                     }
-                    else if ([[[row substringFromIndex:i] substringToIndex: 1] isEqualToString: @"P"]){
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"P"]){
                         self.player1 = [[Room1Player alloc] initWithX: j*20+x y:i*15+y];
                     }
                 }
