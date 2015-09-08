@@ -42,8 +42,8 @@
     }
 }
 
--(void) extraCollisionWithDegree:(int)dg{
-    [super extraCollisionWithDegree:dg]; //Just in case I do want to add something...
+-(void) extraCollisionWithDegree:(int)dg instance: (Instance *)i{
+    [super extraCollisionWithDegree:dg instance: i]; //Just in case I do want to add something...
     if (dg == 270){
         self.onGround = true;
     }

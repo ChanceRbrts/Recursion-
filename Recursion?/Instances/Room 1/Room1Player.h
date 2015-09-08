@@ -16,6 +16,10 @@
 @property bool againstRightWall;
 /**@brief Is the player against a wall on the left?*/
 @property bool againstLeftWall;
+/**@brief Invincibility Buffer*/
+@property int buffer;
+/**@brief MAX Invincibility Buffer*/
+@property int maxBuffer;
 /**@brief An update function that requires keyboard commands.
  @param con The controls that are being held.
  @param conPressed The controls that are being pressed.*/

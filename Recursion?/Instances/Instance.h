@@ -26,6 +26,8 @@
 @property float hp;
 /**@brief The maximum HP of an object.*/
 @property float maxHP;
+/**@brief The attack power. ONLY USE FOR Enemies and Players.*/
+@property float atk;
 /**@brief What collision type? (Solid, Slope, Transparent)*/
 @property NSString *type;
 /**@brief What is the name of the object?*/
@@ -38,7 +40,7 @@
 -(id)initWithX:(float)X y:(float)Y;
 /**@brief Running code for more depth into collision.
  @param dg: Rotation in the unit circle (in degrees) relative to the current object that the collided object is in.*/
--(void) extraCollisionWithDegree:(int)dg;
+-(void) extraCollisionWithDegree:(int)dg instance: (Instance *)i;
 /**@brief Collision check with another instance.
  @param i The instance in question.*/
 -(void) collisionWithInstance:(Instance *)i;

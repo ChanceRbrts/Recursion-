@@ -39,5 +39,8 @@
             [self addChild: [sc createNodeWithImage:(NSString *)instru[i][0] x: [((NSNumber *)instru[i][1]) floatValue] y: [((NSNumber *)instru[i][2]) floatValue] w: [((NSNumber *)instru[i][3]) floatValue] h: [((NSNumber *)instru[i][4]) floatValue] rotation: [((NSNumber *)instru[i][5]) floatValue] view: self.view]];
         }
     }
+    SKSpriteNode *reset = [SKSpriteNode spriteNodeWithColor: [NSColor colorWithRed:0 green:0 blue:0 alpha:self.OBJMAN.roomReset/180.0]size: CGSizeMake(1,1)];
+    reset.position = CGPointMake(0.5,0.5);
+    [self addChild: reset];
 }
 @end

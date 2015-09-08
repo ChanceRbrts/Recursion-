@@ -14,6 +14,7 @@
     self.frame = 0;
     self.index = @"Hazard";
     self.enemy = @"All-Sides";
+    self.atk = 999;
     return self;
 }
 -(void) update{

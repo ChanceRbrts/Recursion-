@@ -16,6 +16,10 @@
 @property float viewX;
 /**@brief The camera's y posiiton. (Right side of screen)*/
 @property float viewY;
+/**@brief Resets the room after the first player dies. :( */
+@property int roomReset;
+/**@brief How long to wait until the room resets. :( */
+@property int maxRoomReset;
 /**@brief All of the objects in Room/Layer 1*/
 @property NSArray *room1Objects;
 /**@brief The player in Room/Layer 1*/

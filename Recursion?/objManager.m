@@ -17,6 +17,8 @@
     self.viewX = -9999;
     self.viewY = -9999;
     self.room = 1;
+    self.maxRoomReset = 240;
+    self.roomReset = 0;
     return self;
 }
 
@@ -43,6 +45,9 @@
     [self updateLayer1WithControlsHeld:con controlsPressed:conPressed];
     if (self.room == 1){
         [self changeViewXandYWithInstance: self.player1];
+    }
+    if (self.roomReset == self.maxRoomReset){
+        self.room1Objects = [self buildRoom: [[Room1 alloc]init].Room1];
     }
 }
 
@@ -83,6 +88,12 @@
     [self.player1 finishUpdate];
     for (int i = 0; i < r1Objects.count; i++){
         [(Instance*)(r1Objects[i]) finishUpdate];
+    }
+    if (self.player1.hp <= 0){
+        self.roomReset += 1;
+    }
+    else{
+        self.roomReset = 0;
     }
 }
 

@@ -14,13 +14,17 @@
     self = [super initWithX: X y: Y];
     self.index = @"Player";
     self.h = 64;
+    self.maxHP = 3;
+    self.hp = self.maxHP;
+    self.maxBuffer = 180;
+    self.buffer = self.maxBuffer;
     return self;
 }
 
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     [super update];
     //Moving Left
-    if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO]){
+    if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO] && self.hp > 0){
         self.dX -= 0.25;
         if ((self.dX < -4 && [con[B] isEqual: @NO]) || (self.dX < -8 && [con[B] isEqual: @YES])){
             if (self.dX <= -4.5 && [con[B] isEqual: @NO]){
@@ -38,7 +42,7 @@
         }
     }
     //Moving Right
-    else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO]){
+    else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO] && self.hp > 0){
         self.dX += 0.25;
         if ((self.dX > 4 && [con[B] isEqual: @NO]) || (self.dX  > 8 && [con[B] isEqual: @YES])){
             if ((self.dX >= 4.5 && [con[B] isEqual: @NO])){
@@ -68,7 +72,7 @@
         }
     }
     //Jumping
-    if ([conPressed[A] isEqual: @YES] && self.onGround){
+    if ([conPressed[A] isEqual: @YES] && self.onGround && self.hp > 0){
         if (self.dX > 0){
             self.dY = -4-self.dX/2;
         }
@@ -77,7 +81,7 @@
         }
     }
     //Terminal Velocity changes as you are sliding down the wall.
-    if ((self.againstLeftWall && [con[LEFT] isEqual: @YES]) || (self.againstRightWall && [con[RIGHT] isEqual: @YES])){
+    if (((self.againstLeftWall && [con[LEFT] isEqual: @YES]) || (self.againstRightWall && [con[RIGHT] isEqual: @YES])) && self.hp > 0){
         self.terminalVelocity = 4;
         if (self.againstLeftWall && [con[LEFT] isEqual: @YES]){
             self.dX = -0.5; //Just to keep yourself on the wall.
@@ -90,7 +94,7 @@
         self.terminalVelocity = 16;
     }
     //Walljumping
-    if ([conPressed[A] isEqual: @YES]){
+    if ([conPressed[A] isEqual: @YES] && self.hp > 0){
         if (self.againstLeftWall && con[LEFT]){
             if ([con[UP] isEqual: @YES] && [con[DOWN] isEqual: @NO]){
                 self.dY = -8;
@@ -110,7 +114,7 @@
             }
             self.x += 1;
         }
-        else if (self.againstRightWall && [con[RIGHT] isEqual: @YES]){
+        else if (self.againstRightWall && [con[RIGHT] isEqual: @YES] && self.hp > 0){
             if (con[UP] && !con[DOWN]){
                 self.dY = -8;
                 self.dX = -2;
@@ -136,15 +140,22 @@
 
 -(void)finishUpdate{
     [super finishUpdate];
+    if (self.buffer < self.maxBuffer){
+        self.buffer = self.maxBuffer;
+    }
 }
 
--(void) extraCollisionWithDegree:(int)dg{
-    [super extraCollisionWithDegree:dg];
+-(void) extraCollisionWithDegree:(int)dg instance: (Instance *)i{
+    [super extraCollisionWithDegree:dg instance: i];
     if (dg == 0){
         self.againstRightWall = true;
     }
     else if (dg == 180){
         self.againstLeftWall = true;
+    }
+    if ([i.enemy isEqualToString: @"All-Sides"] && self.buffer >= self.maxBuffer){
+        self.hp -= i.atk;
+        self.buffer = 0;
     }
 }
 
