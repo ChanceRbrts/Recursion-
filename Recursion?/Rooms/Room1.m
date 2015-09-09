@@ -114,8 +114,25 @@
                  @"SSSSSSHHHHHHHSSSSSSS",
                  @"SSSSSSSSSSSSSSSSSSSS",
                  ];
+    NSArray *Room1_AG = @[
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"SSSSS000000000000000",
+                @"SSSSS000000000000000",
+                @"SSSSS00000000000000S",
+                @"SSSSS00000000000000S",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                 ];
     /**@brief The layout of the room.*/
-    self.Room1 = @[@[Room1_AA,Room1_AB,Room1_AC,Room1_AD,Room1_AE,Room1_AF]];
+    self.Room1 = @[@[Room1_AA,Room1_AB,Room1_AC,Room1_AD,Room1_AE,Room1_AF,Room1_AG]];
     return self;
 }
 @end

@@ -33,7 +33,7 @@
 -(void) collisionWithInstance:(Instance *)i{
     if ([self.type isEqualToString: @"Solid"]){
         if ([i.type isEqualToString: @"Solid"]){
-            if (self.y+self.dY+self.h > i.y+i.dY && self.y+self.h <= i.y+i.dY && self.x+self.w > i.x+i.dX && self.x < i.x+i.w+i.dX){ //Collides on the bottom side.
+            if (self.y+self.dY+self.h > i.y+i.dY && self.y+self.h <= i.y+i.dY && (self.x+self.w > i.x+i.dX || (self.x+self.w+self.dX > i.x+i.dX && (self.dX >= 0.25 || self.dX <= -0.25))) && (self.x < i.x+i.w+i.dX || (self.x+self.dX < i.x+i.w+i.dX && (self.dX >= 0.25 || self.dX <= -0.25)))){ //Collides on the bottom side.
                 self.dY = 0;
                 i.dY = 0;
                 self.y = i.y-self.h;

@@ -18,6 +18,7 @@
     self.hp = self.maxHP;
     self.maxBuffer = 180;
     self.buffer = self.maxBuffer;
+    self.facingRight = true;
     return self;
 }
 
@@ -40,6 +41,7 @@
                 self.dX = -8;
             }
         }
+        self.facingRight = false;
     }
     //Moving Right
     else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO] && self.hp > 0){
@@ -58,6 +60,7 @@
                 self.dX = 8;
             }
         }
+        self.facingRight = true;
     }
     //Stopping
     else{
@@ -84,10 +87,12 @@
     if (((self.againstLeftWall && [con[LEFT] isEqual: @YES]) || (self.againstRightWall && [con[RIGHT] isEqual: @YES])) && self.hp > 0){
         self.terminalVelocity = 4;
         if (self.againstLeftWall && [con[LEFT] isEqual: @YES]){
-            self.dX = -0.5; //Just to keep yourself on the wall.
+            self.dX = -0.05; //Just to keep yourself on the wall.
+            self.facingRight = true;
         }
         else{
-            self.dX = 0.5; //Just to keep yourself on the wall.
+            self.dX = 0.05; //Just to keep yourself on the wall.
+            self.facingRight = false;
         }
     }
     else{
@@ -136,6 +141,15 @@
     }
     self.againstLeftWall = false;
     self.againstRightWall = false;
+    if (self.hp <= 0 && self.lastHP > 0){
+        self.w = 64;
+        self.h = 32;
+        self.y += 32;
+        if (self.facingRight == false){
+            self.x -= 32;
+        }
+    }
+    self.lastHP = self.hp;
 }
 
 -(void)finishUpdate{
