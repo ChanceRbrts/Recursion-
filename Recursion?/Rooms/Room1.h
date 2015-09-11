@@ -10,6 +10,7 @@
 #define Recursion__Room1_h
 #include "Room1Player.h"
 #include "Room1Hazard.h"
+#include "Room1Enemy1.h"
 @interface Room1 : NSObject
 /**@brief The layout of the room.*/
 @property NSArray *Room1;

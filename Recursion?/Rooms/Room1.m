@@ -128,7 +128,7 @@
                 @"SSSSS000000000000000",
                 @"SSSSS000000000000000",
                 @"SSSSS00000000000000S",
-                @"SSSSS00000000000000S",
+                @"SSSSS00000001000000S",
                 @"SSSSSSSSSSSSSSSSSSSS",
                  ];
     /**@brief The layout of the room.*/

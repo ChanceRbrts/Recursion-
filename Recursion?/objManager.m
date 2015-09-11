@@ -150,6 +150,9 @@
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"P"]){
                         self.player1 = [[Room1Player alloc] initWithX: j*20+x y:i*15+y];
                     }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"1"]){
+                        [objects addObject: [[Room1Enemy1 alloc] initWithX: j*20+x y:i*15+y]];
+                    }
                 }
             }
             [rowOfObjects addObject: objects];
