@@ -64,8 +64,16 @@
                 if (c >= 0 && c < ((NSArray *)(self.room1Objects[r])).count){
                     for (int i = 0; i < ((NSArray *)((NSArray *)self.room1Objects[r])[c]).count; i++){
                         //By far the most casting I think I've ever done...
-                        [(Instance *)(((NSArray *)((NSArray *)self.room1Objects[r])[c])[i]) update];
-                        [r1Objects addObject: (Instance *)(((NSArray *)((NSArray *)self.room1Objects[r])[c])[i])];
+                        Instance *current = (Instance *)(((NSArray *)((NSArray *)self.room1Objects[r])[c])[i]);
+                        if (current.x >= (c+1)*640 || current.x < c*640 || current.y >= (r+1)*480 || current.y < r*480){
+                            [((NSArray *)self.room1Objects[r])[c] removeObjectAtIndex: i];
+                            [((NSArray *)self.room1Objects[(int)current.y/480])[(int)current.x/640] addObject: current];
+                            i -= 1;
+                        }
+                        if (current.x >= (self.mainCol-1)*640 && current.x < (self.mainCol+2)*640 && current.y >= (self.mainRow-1)*480 && current.y < (self.mainRow+2)*480){
+                            [current update];
+                            [r1Objects addObject: current];
+                        }
                     }
                 }
             }
@@ -76,10 +84,10 @@
        [self.player1 collisionWithInstance: ((Instance *)(r1Objects[i]))];
     }
     for (int i = 0; i < r1Objects.count; i++){
-        if (![((Instance *)([r1Objects objectAtIndex: i])).type isEqualToString: @"Solid"]){
+        if (![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Solid"]){
             for (int j = 0; j < r1Objects.count; j++){
                 if (i != j){
-                    [((Instance *)([r1Objects objectAtIndex: i])) collisionWithInstance: ((Instance *)([self.room1Objects objectAtIndex: j]))];
+                    [((Instance *)([r1Objects objectAtIndex: i])) collisionWithInstance: ((Instance *)([r1Objects objectAtIndex: j]))];
                 }
             }
         }
@@ -152,6 +160,9 @@
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"1"]){
                         [objects addObject: [[Room1Enemy1 alloc] initWithX: j*20+x y:i*15+y]];
+                    }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"!"]){
+                        [objects addObject: [[Room1HazardBounce alloc] initWithX: j*20+x y:i*15+y]];
                     }
                 }
             }

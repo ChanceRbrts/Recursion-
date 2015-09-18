@@ -17,6 +17,7 @@
 		1541D9791B87C61400E5CDE5 /* Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D9781B87C61400E5CDE5 /* Controls.m */; };
 		159F65E81B90B4AD00791F56 /* Room1Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 159F65E71B90B4AD00791F56 /* Room1Player.m */; };
 		15A37C291B8FC36300325096 /* PlatformerInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A37C281B8FC36300325096 /* PlatformerInstance.m */; };
+		15B455561BA3275F00B1BC51 /* Room1HazardBounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B455551BA3275F00B1BC51 /* Room1HazardBounce.m */; };
 		15C8ACA71B97DFD2001CD50A /* SolidWallPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 15C8ACA61B97DFD2001CD50A /* SolidWallPlaceholder.png */; };
 		15E52F421BA0CFE1000EC2A3 /* Room1Enemy1.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E52F411BA0CFE1000EC2A3 /* Room1Enemy1.m */; };
 		15E5D4531B953C0F00516E95 /* Room1Hazard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44B1B953C0F00516E95 /* Room1Hazard1.png */; };
@@ -65,6 +66,8 @@
 		159F65E71B90B4AD00791F56 /* Room1Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Player.m; path = "Instances/Room 1/Room1Player.m"; sourceTree = "<group>"; };
 		15A37C271B8FC34F00325096 /* PlatformerInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlatformerInstance.h; path = Instances/PlatformerInstance.h; sourceTree = "<group>"; };
 		15A37C281B8FC36300325096 /* PlatformerInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformerInstance.m; path = Instances/PlatformerInstance.m; sourceTree = "<group>"; };
+		15B455541BA3265A00B1BC51 /* Room1HazardBounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1HazardBounce.h; path = "Instances/Room 1/Room1HazardBounce.h"; sourceTree = "<group>"; };
+		15B455551BA3275F00B1BC51 /* Room1HazardBounce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1HazardBounce.m; path = "Instances/Room 1/Room1HazardBounce.m"; sourceTree = "<group>"; };
 		15C8ACA61B97DFD2001CD50A /* SolidWallPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SolidWallPlaceholder.png; path = Sprites/SolidWallPlaceholder.png; sourceTree = "<group>"; };
 		15E52F401BA0CFC8000EC2A3 /* Room1Enemy1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Enemy1.h; path = "Instances/Room 1/Room1Enemy1.h"; sourceTree = "<group>"; };
 		15E52F411BA0CFE1000EC2A3 /* Room1Enemy1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Enemy1.m; path = "Instances/Room 1/Room1Enemy1.m"; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				15E906451B94CB340060D283 /* Room1Hazard.m */,
 				15E52F401BA0CFC8000EC2A3 /* Room1Enemy1.h */,
 				15E52F411BA0CFE1000EC2A3 /* Room1Enemy1.m */,
+				15B455541BA3265A00B1BC51 /* Room1HazardBounce.h */,
+				15B455551BA3275F00B1BC51 /* Room1HazardBounce.m */,
 			);
 			name = "Room 1";
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 			files = (
 				15E5D45C1B954A0900516E95 /* Room1.m in Sources */,
 				15EDF95F1B90FBD8001927A8 /* Solid.m in Sources */,
+				15B455561BA3275F00B1BC51 /* Room1HazardBounce.m in Sources */,
 				1541D9591B87C49C00E5CDE5 /* main.m in Sources */,
 				1541D9791B87C61400E5CDE5 /* Controls.m in Sources */,
 				15EFCA551B8EBF120018FB65 /* Instance.m in Sources */,

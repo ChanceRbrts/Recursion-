@@ -9,6 +9,7 @@
 #ifndef Recursion__Room1Enemy1_h
 #define Recursion__Room1Enemy1_h
 #include "PlatformerInstance.h"
+/**@brief The first enemy type of Room 1.*/
 @interface Room1Enemy1 : PlatformerInstance
 @end
 #endif

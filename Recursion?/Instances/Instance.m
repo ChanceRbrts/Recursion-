@@ -38,24 +38,28 @@
                 i.dY = 0;
                 self.y = i.y-self.h;
                 [self extraCollisionWithDegree:270 instance: i];
+                [i extraCollisionWithDegree: 90 instance: self];
             }
             if (self.y+self.dY < i.y+i.dY+i.h && self.y >= i.y+i.h+i.dY && self.x+self.w > i.x+i.dX && self.x < i.x+i.w+i.dX){ //Collides on the top side.
                 self.y = i.y+i.h;
                 self.dY = 0;
                 i.dY = 0;
                 [self extraCollisionWithDegree:90 instance: i];
+                [i extraCollisionWithDegree:270 instance: i];
             }
             if (self.x+self.dX+self.w > i.x+i.dX && self.x+self.w <= i.x+i.dX && self.y+self.h > i.y+i.dY && self.y < i.y+i.h+i.dY){ //Collides on the right side.
                 self.x = i.x-self.w;
                 self.dX = 0;
                 i.dX = 0;
                 [self extraCollisionWithDegree:0 instance: i];
+                [self extraCollisionWithDegree:180 instance: i];
             }
             if (self.x+self.dX < i.x+i.dX+i.w && self.x >= i.x+i.w+i.dX && self.y+self.h > i.y+i.dY && self.y < i.y+i.h+i.dY){ //Collides on the left side.
                 self.x = i.x+i.w;
                 self.dX = 0;
                 i.dX = 0;
                 [self extraCollisionWithDegree:180 instance: i];
+                [i extraCollisionWithDegree:0 instance: i];
             }
         }
     }

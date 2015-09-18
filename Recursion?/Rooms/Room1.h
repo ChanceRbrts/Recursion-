@@ -11,6 +11,7 @@
 #include "Room1Player.h"
 #include "Room1Hazard.h"
 #include "Room1Enemy1.h"
+#include "Room1HazardBounce.h"
 @interface Room1 : NSObject
 /**@brief The layout of the room.*/
 @property NSArray *Room1;

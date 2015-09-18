@@ -12,6 +12,7 @@
 -(id)initWithX:(float)X y:(float)Y{
     self = [super initWithX:X y:Y];
     self.atk = 1;
+    self.index = @"Enemy1";
     self.enemy = @"Platformer";
     return self;
 }
