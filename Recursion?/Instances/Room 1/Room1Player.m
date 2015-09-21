@@ -23,7 +23,7 @@
 }
 
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
-    [super update];
+    [super updateWithPlayer: self];
     //Moving Left
     if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO] && self.hp > 0){
         self.dX -= 0.25;

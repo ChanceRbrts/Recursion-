@@ -11,5 +11,7 @@
 #include "PlatformerInstance.h"
 /**@brief The first enemy type of Room 1.*/
 @interface Room1Enemy1 : PlatformerInstance
+/**@brief Are you facing right?*/
+@property bool facingRight;
 @end
 #endif

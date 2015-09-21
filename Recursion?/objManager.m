@@ -71,7 +71,7 @@
                             i -= 1;
                         }
                         if (current.x >= (self.mainCol-1)*640 && current.x < (self.mainCol+2)*640 && current.y >= (self.mainRow-1)*480 && current.y < (self.mainRow+2)*480){
-                            [current update];
+                            [current updateWithPlayer: self.player1];
                             [r1Objects addObject: current];
                         }
                     }

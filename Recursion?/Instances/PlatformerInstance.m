@@ -17,8 +17,8 @@
     return self;
 }
 
--(void) update{
-    [super update];
+-(void) updateWithPlayer: (Instance *)p{
+    [super updateWithPlayer: p];
     [self gravity];
 }
 

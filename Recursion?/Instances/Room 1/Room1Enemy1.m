@@ -14,6 +14,10 @@
     self.atk = 1;
     self.index = @"Enemy1";
     self.enemy = @"Platformer";
+    self.facingRight = true;
     return self;
+}
+-(void) aiWithPlayer: (Instance *)p{
+    
 }
 @end

@@ -19,15 +19,15 @@
     self.dX = -4;
     return self;
 }
--(void) update{
-    [super update];
+-(void) updateWithPlayer: (Instance *)p{
+    [super updateWithPlayer: p];
     self.frame += 0.25;
     if (self.frame > 8){
         self.frame = 1;
     }
 }
 
--(void) ai{
+-(void) aiWithPlayer: (Instance *)p{
     if (self.dX == 0){
         if (self.facingRight){
             self.dX = -4;

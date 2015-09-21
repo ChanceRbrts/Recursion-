@@ -52,7 +52,7 @@
                 self.dX = 0;
                 i.dX = 0;
                 [self extraCollisionWithDegree:0 instance: i];
-                [self extraCollisionWithDegree:180 instance: i];
+                [i extraCollisionWithDegree:180 instance: self];
             }
             if (self.x+self.dX < i.x+i.dX+i.w && self.x >= i.x+i.w+i.dX && self.y+self.h > i.y+i.dY && self.y < i.y+i.h+i.dY){ //Collides on the left side.
                 self.x = i.x+i.w;
@@ -63,9 +63,12 @@
             }
         }
     }
+    if (self.y+self.dY+self.h > i.y+i.dY && self.y+self.dY < i.y+i.dY+i.h && self.x+self.dX+self.w > i.x+i.dX && self.x+self.dX < i.x+i.dX+i.w){
+        [self extraCollisionWithDegree: -1 instance: i];
+    }
 }
--(void) update{
-    [self ai];
+-(void) updateWithPlayer: (Instance *)p{
+    [self aiWithPlayer: p];
 }
 
 -(void) finishUpdate{
@@ -73,7 +76,7 @@
     self.y += self.dY;
 }
 
--(void) ai{
+-(void) aiWithPlayer: (Instance *)p{
     
 }
 

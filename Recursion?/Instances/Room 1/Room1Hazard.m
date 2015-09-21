@@ -17,8 +17,8 @@
     self.atk = 999;
     return self;
 }
--(void) update{
-    [super update];
+-(void) updateWithPlayer: (Instance *)p{
+    [super updateWithPlayer: p];
     self.frame += 0.25;
     if (self.frame > 8){
         self.frame = 1;

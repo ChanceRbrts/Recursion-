@@ -45,9 +45,9 @@
  @param i The instance in question.*/
 -(void) collisionWithInstance:(Instance *)i;
 /**@brief The command that updates the states of the instances.*/
--(void) update;
+-(void) updateWithPlayer: (Instance *)p;
 /**@brief AI of non-controlled instances.*/
--(void) ai;
+-(void) aiWithPlayer: (Instance *)p;
 /**@brief Sends out an array of things for the SpriteCreator to create a node for the funciton.*/
 -(NSArray *) drawWithViewX: (float) vX viewY: (float) vY;
 /**@brief Actually moves the objects. TO BE RUN AT THE END OF THE MAIN UPDATE LOOP.*/
