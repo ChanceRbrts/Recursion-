@@ -24,6 +24,8 @@
 @property int maxBuffer;
 /**@brief Is the player facing right?*/
 @property bool facingRight;
+/**@brief Is the player pressing the jump button?*/
+@property bool pressingJump;
 /**@brief An update function that requires keyboard commands.
  @param con The controls that are being held.
  @param conPressed The controls that are being pressed.*/

@@ -42,5 +42,10 @@
     SKSpriteNode *reset = [SKSpriteNode spriteNodeWithColor: [NSColor colorWithRed:0 green:0 blue:0 alpha:self.OBJMAN.roomReset/180.0]size: CGSizeMake(1,1)];
     reset.position = CGPointMake(0.5,0.5);
     [self addChild: reset];
+    if (self.OBJMAN.room == 1 && self.OBJMAN.player1.hp > 0){
+        SKSpriteNode *hit = [SKSpriteNode spriteNodeWithColor: [NSColor colorWithRed: 0.1 green: 0.7 blue: 1 alpha: (self.OBJMAN.player1.maxBuffer-self.OBJMAN.player1.buffer)*1.0/self.OBJMAN.player1.maxBuffer] size: CGSizeMake(self.OBJMAN.player1.w/626, self.OBJMAN.player1.h/626)];
+        hit.position = CGPointMake(((self.OBJMAN.player1.x-self.OBJMAN.viewX)+self.OBJMAN.player1.w/2)/626,(551-((self.OBJMAN.player1.y-self.OBJMAN.viewY)+self.OBJMAN.player1.h/2))/626);
+        [self addChild: hit];
+    }
 }
 @end

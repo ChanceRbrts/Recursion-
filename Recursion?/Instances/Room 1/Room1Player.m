@@ -19,6 +19,8 @@
     self.maxBuffer = 180;
     self.buffer = self.maxBuffer;
     self.facingRight = true;
+    self.pressingJump = false;
+    self.atk = 1;
     return self;
 }
 
@@ -82,6 +84,10 @@
         else{
             self.dY = -4+self.dX/2;
         }
+    }
+    //More checking of Jump/A Button
+    if ([conPressed[A] isEqual: @YES]){
+        self.pressingJump = true;
     }
     //Terminal Velocity changes as you are sliding down the wall.
     if (((self.againstLeftWall && [con[LEFT] isEqual: @YES]) || (self.againstRightWall && [con[RIGHT] isEqual: @YES])) && self.hp > 0){
@@ -154,9 +160,11 @@
 
 -(void)finishUpdate{
     [super finishUpdate];
-    if (self.buffer < self.maxBuffer){
+    self.buffer++;
+    if (self.buffer > self.maxBuffer){
         self.buffer = self.maxBuffer;
     }
+    self.pressingJump = false;
 }
 
 -(void) extraCollisionWithDegree:(int)dg instance: (Instance *)i{
@@ -170,6 +178,21 @@
     if ([i.enemy isEqualToString: @"All-Sides"] && self.buffer >= self.maxBuffer){
         self.hp -= i.atk;
         self.buffer = 0;
+    }
+    else if ([i.enemy isEqualToString: @"Platformer"]){
+        if (dg == 270){
+            if (self.pressingJump){
+                self.dY = -8;
+            }
+            else{
+                self.dY = -4;
+            }
+            i.hp -= self.atk;
+        }
+        else if (self.buffer >= self.maxBuffer){
+            self.hp -= i.atk;
+            self.buffer = 0;
+        }
     }
 }
 

@@ -67,7 +67,11 @@
                         Instance *current = (Instance *)(((NSArray *)((NSArray *)self.room1Objects[r])[c])[i]);
                         if (current.x >= (c+1)*640 || current.x < c*640 || current.y >= (r+1)*480 || current.y < r*480){
                             [((NSArray *)self.room1Objects[r])[c] removeObjectAtIndex: i];
-                            [((NSArray *)self.room1Objects[(int)current.y/480])[(int)current.x/640] addObject: current];
+                            [((NSArray *)self.room1Objects[(int)current.y/480])[(int)current.x/640] insertObject: current atIndex:0];
+                            i -= 1;
+                        }
+                        else if (current.hp == 0){
+                            [((NSArray *)self.room1Objects[r])[c] removeObjectAtIndex: i];
                             i -= 1;
                         }
                         if (current.x >= (self.mainCol-1)*640 && current.x < (self.mainCol+2)*640 && current.y >= (self.mainRow-1)*480 && current.y < (self.mainRow+2)*480){

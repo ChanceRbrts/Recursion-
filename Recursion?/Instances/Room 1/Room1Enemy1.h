@@ -13,5 +13,7 @@
 @interface Room1Enemy1 : PlatformerInstance
 /**@brief Are you facing right?*/
 @property bool facingRight;
+/**@brief Are you in pursuit of the player?*/
+@property bool inPursuit;
 @end
 #endif
