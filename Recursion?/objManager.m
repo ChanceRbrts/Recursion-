@@ -168,6 +168,9 @@
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"!"]){
                         [objects addObject: [[Room1HazardBounce alloc] initWithX: j*20+x y:i*15+y]];
                     }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"2"]){
+                        [objects addObject: [[Room1Enemy2 alloc] initWithX: j*20+x y:i*15+y]];
+                    }
                 }
             }
             [rowOfObjects addObject: objects];

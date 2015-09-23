@@ -14,6 +14,20 @@
     self.atk = 1;
     self.index = @"Enemy2";
     self.enemy = @"Platformer";
+    self.loopMove = 0;
     return self;
+}
+-(void) aiWithPlayer:(Instance *)p{
+    self.loopMove += M_PI/48.f;
+    self.dX = 2*sin(self.loopMove/5.f);
+    self.dY = -2*cos(self.loopMove);
+    
+}
+-(NSArray *)drawWithViewX:(float)vX viewY:(float)vY{
+    return(@[@"SolidWallPlaceholder",
+             [NSNumber numberWithFloat: self.x-vX],[NSNumber numberWithFloat: self.y-vY],
+             [NSNumber numberWithFloat: self.w], [NSNumber numberWithFloat: self.h],
+             [NSNumber numberWithFloat: 0]]);
+    
 }
 @end
