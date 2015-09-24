@@ -16,6 +16,8 @@
 @property float viewX;
 /**@brief The camera's y posiiton. (Right side of screen)*/
 @property float viewY;
+/**@brief Checkpoint's Position (Room 1)*/
+@property CGPoint checkpoint1;
 /**@brief Resets the room after the first player dies. :( */
 @property int roomReset;
 /**@brief How long to wait until the room resets. :( */

@@ -19,6 +19,7 @@
     self.room = 1;
     self.maxRoomReset = 240;
     self.roomReset = 0;
+    self.checkpoint1 = CGPointMake(-1, -1);
     return self;
 }
 
@@ -27,12 +28,15 @@
     if (self.viewX < 0){
         self.viewX = 0;
     }
+    if (self.viewX > 640*((NSArray *)self.room1Objects[0]).count-626){
+        self.viewX = 640*((NSArray *)self.room1Objects[0]).count-626;
+    }
     self.viewY = i.y-313;
     if (self.viewY < 0){
         self.viewY = 0;
     }
-    if (self.viewY > 640*self.room1Objects.count-633){
-        self.viewY = 640*self.room1Objects.count-633;
+    if (self.viewY > 480*self.room1Objects.count-473){
+        self.viewY = 480*self.room1Objects.count-473;
     }
 }
 
@@ -88,7 +92,7 @@
        [self.player1 collisionWithInstance: ((Instance *)(r1Objects[i]))];
     }
     for (int i = 0; i < r1Objects.count; i++){
-        if (![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Solid"]){
+        if (![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Solid"] && ![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Hazard"]){
             for (int j = 0; j < r1Objects.count; j++){
                 if (i != j){
                     [((Instance *)([r1Objects objectAtIndex: i])) collisionWithInstance: ((Instance *)([r1Objects objectAtIndex: j]))];
@@ -161,6 +165,10 @@
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"P"]){
                         self.player1 = [[Room1Player alloc] initWithX: j*20+x y:i*15+y];
+                        if (self.checkpoint1.x >= 0){
+                            self.player1.x = self.checkpoint1.x;
+                            self.player1.y = self.checkpoint1.y;
+                        }
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"1"]){
                         [objects addObject: [[Room1Enemy1 alloc] initWithX: j*20+x y:i*15+y]];

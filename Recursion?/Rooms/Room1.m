@@ -237,7 +237,7 @@
                 @"SSSSSSSSSSSSSSSSSSSS",
                 @"SSSSSSSSSSSSSSSSSSSS",
                 @"SSSSSSSSSSSSSSSSSSSS",
-                @"SSSSSSSSSSSSSSSSSSSS",
+                @"00000000000SSSSSSSSS",
                 @"00000000000SSSSSSSSS",
                 @"00000000000SSSSSSSSS",
                 @"00000000000SSSSSSSSS",
@@ -254,7 +254,7 @@
                 @"SSSSSSSSSSSSSSSSSSSS",
                 @"SSSSSSSSSSSSSSSSSSSS",
                 @"SSSSSSSSSSSSSSSSSSSS",
-                @"SSSSSSSSSSSSSSSSSSSS",
+                @"00000000000000000000",
                 @"00000000!00000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
@@ -279,9 +279,9 @@
                 @"SSSS0000000000000000",
                 @"SSSS0000020000000000",
                 @"SSSS0000000000000000",
-                @"SSSH0000000000000000",
-                @"SSSH0000000000000000",
-                @"SSSH0000000000000000",
+                @"SSSS0000000000000000",
+                @"SSSS0000000000000000",
+                @"SSSS0000000000000000",
                 @"SSSSSSSSSSSSSSSSSSSS",
                 ];
     NSArray *Room1_BD = @[
@@ -293,6 +293,91 @@
                 @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
+                @"00000000200000000000",
+                @"00000SS0000000000000",
+                @"00000SS0000000000000",
+                @"00000SS0000000000000",
+                @"00000SS0000000000000",
+                @"00000SSHHHHHHHHHHHHH",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                ];
+    NSArray *Room1_BC = @[
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"00000HSH00000000SS00",
+                @"00000HHH00000000SS00",
+                @"0000000000000000SS00",
+                @"S000000000000000SS00",
+                @"S000000000000000SS00",
+                @"S000000000000000SS00",
+                @"S00000000000SS00SS00",
+                @"S00200000000SS00SS00",
+                @"S00000000000SS00SS00",
+                @"S00000000000SS000000",
+                @"SHHHHHHHHHHHSS001000",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                ];
+    NSArray *Room1_BB = @[
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000SSS",
+                @"00000000000000000SSS",
+                @"00000000000000000SSS",
+                @"00000000000000000SSS",
+                @"00000000000000000SSS",
+                @"00000000000000000SSS",
+                @"00000000000000000SSS",
+                @"01000000000100000SSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                ];
+    NSArray *Room1_BA = @[
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSS0000000000000",
+                @"SSSSSSS0000000000000",
+                @"SSSSSSS0000000000000",
+                @"SSSSSSS0000000000000",
+                @"SSSSSSS0000000000000",
+                @"SSSSSSS0000202000000",
+                @"SSSSSSS0000000000000",
+                @"SSSSSSS0000000000000",
+                @"SSSSSSS0000000000000",
+                @"S0000000000000000202",
+                @"S000000000000S000000",
+                @"S000000SSSSSSSSSSSSS",
+                ];
+    NSArray *Room1_CA = @[
+                @"S000000SSSSSSSSSSSSS",
+                @"S000000SSSSSSSSSSSSS",
+                @"S000000SSSSSSSSSSSSS",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"S0000000000000000000",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                ];
+    NSArray *Room1_CB = @[
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
@@ -301,15 +386,55 @@
                 @"00000000000000000000",
                 @"SSSSSSSSSSSSSSSSSSSS",
                 ];
-    NSArray *Room1_BC = @[
+    NSArray *Room1_CC = @[
                 ];
-    NSArray *Room1_BB = @[
+    NSArray *Room1_CD = @[
                 ];
-    NSArray *Room1_BA = @[
+    NSArray *Room1_CE = @[
+                ];
+    NSArray *Room1_CF = @[
+                ];
+    NSArray *Room1_CG = @[
+                ];
+    NSArray *Room1_CH = @[
+                ];
+    NSArray *Room1_CI = @[
+                ];
+    NSArray *Room1_CJ = @[
+                ];
+    NSArray *Room1_CK = @[
+                ];
+    NSArray *Room1_BK = @[
+                ];
+    NSArray *Room1_BL = @[
+                ];
+    NSArray *Room1_AL = @[
+                ];
+    NSArray *Room1_AM = @[
+                ];
+    NSArray *Room1_AN = @[ //The room you lock yourself in.
+                ];
+    NSArray *Room1_Filler = @[
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
                 ];
     /**@brief The layout of the room.*/
     self.Room1 = @[@[Room1_AA,Room1_AB,Room1_AC,Room1_AD,Room1_AE,Room1_AF,Room1_AG,Room1_AH,Room1_AI,Room1_AJ],
-                   @[Room1_BA,Room1_BB,Room1_BC,Room1_BD,Room1_BE,Room1_BF,Room1_BG,Room1_BH,Room1_BI,Room1_BJ]];
+                   @[Room1_BA,Room1_BB,Room1_BC,Room1_BD,Room1_BE,Room1_BF,Room1_BG,Room1_BH,Room1_BI,Room1_BJ],
+                   @[Room1_CA,Room1_CB,Room1_CC,Room1_CD,Room1_CE,Room1_CF,Room1_CG,Room1_CH,Room1_CI,Room1_CJ]];
     return self;
 }
 @end

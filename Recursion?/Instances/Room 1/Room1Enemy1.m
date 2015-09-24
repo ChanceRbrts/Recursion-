@@ -31,8 +31,8 @@
         }
         else{
             self.dX -= 0.25;
-            if (self.dX < -8){
-                self.dX = -8;
+            if (self.dX < -6){
+                self.dX = -6;
             }
         }
         if (sqrtf((p.x-self.x)*(p.x-self.x)+(p.y-self.y)*(p.y-self.y)) > 320){
