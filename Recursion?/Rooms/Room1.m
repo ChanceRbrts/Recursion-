@@ -379,14 +379,29 @@
                 @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
+                @"00000000000000000SS0",
+                @"00020000000000000SS0",
+                @"00200000000000000SS0",
+                @"02000000000000000SS0",
+                @"001000100010000!0SS0",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                ];
+    NSArray *Room1_CC = @[
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"SSSSSSSSSSSSSSSSSSSS",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
+                @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
                 @"00000000000000000000",
                 @"SSSSSSSSSSSSSSSSSSSS",
-                ];
-    NSArray *Room1_CC = @[
                 ];
     NSArray *Room1_CD = @[
                 ];
@@ -414,7 +429,7 @@
                 ];
     NSArray *Room1_AN = @[ //The room you lock yourself in.
                 ];
-    NSArray *Room1_Filler = @[
+    NSArray *Room1_FL = @[
                 @"SSSSSSSSSSSSSSSSSSSS",
                 @"SSSSSSSSSSSSSSSSSSSS",
                 @"SSSSSSSSSSSSSSSSSSSS",
@@ -432,9 +447,9 @@
                 @"SSSSSSSSSSSSSSSSSSSS",
                 ];
     /**@brief The layout of the room.*/
-    self.Room1 = @[@[Room1_AA,Room1_AB,Room1_AC,Room1_AD,Room1_AE,Room1_AF,Room1_AG,Room1_AH,Room1_AI,Room1_AJ],
-                   @[Room1_BA,Room1_BB,Room1_BC,Room1_BD,Room1_BE,Room1_BF,Room1_BG,Room1_BH,Room1_BI,Room1_BJ],
-                   @[Room1_CA,Room1_CB,Room1_CC,Room1_CD,Room1_CE,Room1_CF,Room1_CG,Room1_CH,Room1_CI,Room1_CJ]];
+    self.Room1 = @[@[Room1_AA,Room1_AB,Room1_AC,Room1_AD,Room1_AE,Room1_AF,Room1_AG,Room1_AH,Room1_AI,Room1_AJ,Room1_FL,Room1_AL,Room1_AM,Room1_AN],
+                   @[Room1_BA,Room1_BB,Room1_BC,Room1_BD,Room1_BE,Room1_BF,Room1_BG,Room1_BH,Room1_BI,Room1_BJ,Room1_BK,Room1_BL,Room1_FL,Room1_FL],
+                   @[Room1_CA,Room1_CB,Room1_CC,Room1_CD,Room1_CE,Room1_CF,Room1_CG,Room1_CH,Room1_CI,Room1_CJ,Room1_CK,Room1_FL,Room1_FL,Room1_FL]];
     return self;
 }
 @end
