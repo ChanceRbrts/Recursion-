@@ -86,7 +86,7 @@
         }
     }
     //More checking of Jump/A Button
-    if ([conPressed[A] isEqual: @YES]){
+    if ([con[A] isEqual: @YES]){
         self.pressingJump = true;
     }
     //Terminal Velocity changes as you are sliding down the wall.

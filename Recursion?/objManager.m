@@ -11,6 +11,7 @@
 @implementation objManager
 -(id) init{
     self = [super init];
+    self.checkpoint1 = CGPointMake(-1, -1);
     Room1 *r1 = [[Room1 alloc] init];
     self.room1Objects = [self buildRoom: r1.Room1];
     r1 = nil;
@@ -19,7 +20,6 @@
     self.room = 1;
     self.maxRoomReset = 240;
     self.roomReset = 0;
-    self.checkpoint1 = CGPointMake(-1, -1);
     return self;
 }
 

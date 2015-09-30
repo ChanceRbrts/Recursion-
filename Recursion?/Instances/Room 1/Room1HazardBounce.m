@@ -14,7 +14,7 @@
     self.frame = 1;
     self.index = @"HazardBounce";
     self.enemy = @"All-Sides";
-    self.atk = 999;
+    self.atk = 2;
     self.facingRight = false;
     self.dX = -4;
     return self;
