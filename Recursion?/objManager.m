@@ -104,6 +104,12 @@
     [self.player1 finishUpdate];
     for (int i = 0; i < r1Objects.count; i++){
         [(Instance*)(r1Objects[i]) finishUpdate];
+        if ([((Instance*)(r1Objects[i])).index isEqualToString: @"Checkpoint"]){
+            if (((Room1Checkpoint *)(r1Objects[i])).triggered){
+                self.checkpoint1 = CGPointMake(((Instance *)(r1Objects[i])).x,((Instance *)(r1Objects[i])).y);
+                ((Room1Checkpoint *)(r1Objects[i])).triggered = false;
+            }
+        }
     }
     if (self.player1.hp <= 0){
         self.roomReset += 1;
@@ -178,6 +184,9 @@
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"2"]){
                         [objects addObject: [[Room1Enemy2 alloc] initWithX: j*20+x y:i*15+y]];
+                    }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"C"]){
+                        [objects addObject: [[Room1Checkpoint alloc] initWithX: j*20+x y:i*15+y]];
                     }
                 }
             }

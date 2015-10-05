@@ -13,6 +13,7 @@
 #include "Room1Enemy1.h"
 #include "Room1Enemy2.h"
 #include "Room1HazardBounce.h"
+#include "Room1Checkpoint.h"
 @interface Room1 : NSObject
 /**@brief The layout of the room.*/
 @property NSArray *Room1;

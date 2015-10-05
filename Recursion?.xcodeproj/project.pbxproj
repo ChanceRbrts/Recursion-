@@ -15,6 +15,7 @@
 		1541D9631B87C49C00E5CDE5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1541D9611B87C49C00E5CDE5 /* MainMenu.xib */; };
 		1541D96F1B87C49C00E5CDE5 /* Recursion_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D96E1B87C49C00E5CDE5 /* Recursion_Tests.m */; };
 		1541D9791B87C61400E5CDE5 /* Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D9781B87C61400E5CDE5 /* Controls.m */; };
+		158CF3951BBC5D700093A9FE /* Room1Checkpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 158CF3941BBC5D700093A9FE /* Room1Checkpoint.m */; settings = {ASSET_TAGS = (); }; };
 		159F65E81B90B4AD00791F56 /* Room1Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 159F65E71B90B4AD00791F56 /* Room1Player.m */; };
 		15A37C291B8FC36300325096 /* PlatformerInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A37C281B8FC36300325096 /* PlatformerInstance.m */; };
 		15B455561BA3275F00B1BC51 /* Room1HazardBounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B455551BA3275F00B1BC51 /* Room1HazardBounce.m */; };
@@ -63,6 +64,8 @@
 		1541D96E1B87C49C00E5CDE5 /* Recursion_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recursion_Tests.m; sourceTree = "<group>"; };
 		1541D9781B87C61400E5CDE5 /* Controls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controls.m; sourceTree = "<group>"; };
 		1541D97A1B87C62800E5CDE5 /* Controls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
+		158CF3931BBC5D410093A9FE /* Room1Checkpoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Checkpoint.h; path = "Instances/Room 1/Room1Checkpoint.h"; sourceTree = "<group>"; };
+		158CF3941BBC5D700093A9FE /* Room1Checkpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Checkpoint.m; path = "Instances/Room 1/Room1Checkpoint.m"; sourceTree = "<group>"; };
 		159F65E61B90B48E00791F56 /* Room1Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Player.h; path = "Instances/Room 1/Room1Player.h"; sourceTree = "<group>"; };
 		159F65E71B90B4AD00791F56 /* Room1Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Player.m; path = "Instances/Room 1/Room1Player.m"; sourceTree = "<group>"; };
 		15A37C271B8FC34F00325096 /* PlatformerInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlatformerInstance.h; path = Instances/PlatformerInstance.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				15B455551BA3275F00B1BC51 /* Room1HazardBounce.m */,
 				15C415431BB1A2C200396078 /* Room1Enemy2.h */,
 				15C415441BB1A30E00396078 /* Room1Enemy2.m */,
+				158CF3931BBC5D410093A9FE /* Room1Checkpoint.h */,
+				158CF3941BBC5D700093A9FE /* Room1Checkpoint.m */,
 			);
 			name = "Room 1";
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 			files = (
 				15E5D45C1B954A0900516E95 /* Room1.m in Sources */,
 				15EDF95F1B90FBD8001927A8 /* Solid.m in Sources */,
+				158CF3951BBC5D700093A9FE /* Room1Checkpoint.m in Sources */,
 				15B455561BA3275F00B1BC51 /* Room1HazardBounce.m in Sources */,
 				1541D9591B87C49C00E5CDE5 /* main.m in Sources */,
 				1541D9791B87C61400E5CDE5 /* Controls.m in Sources */,
