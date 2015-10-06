@@ -62,7 +62,7 @@
                 [i extraCollisionWithDegree:0 instance: i];
             }
         }
-        if (self.y+self.dY+self.h > i.y+i.dY && self.y+self.dY < i.y+i.h+i.dY && self.y+self.dY+self.h > i.y+i.dY && self.x+self.dX < i.x+i.w+i.dX){
+        if (self.y+self.dY+self.h > i.y+i.dY && self.y+self.dY < i.y+i.h+i.dY && self.x+self.dX+self.w > i.x+i.dX && self.x+self.dX < i.x+i.w+i.dX){
             [self extraCollisionWithDegree: -1 instance: i];
             [i extraCollisionWithDegree: -1 instance:i];
         }

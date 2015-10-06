@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1500655F1BC479AF00E6D7F6 /* Room1Gate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1500655E1BC479AF00E6D7F6 /* Room1Gate.m */; settings = {ASSET_TAGS = (); }; };
 		1541D9571B87C49C00E5CDE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D9561B87C49C00E5CDE5 /* AppDelegate.m */; };
 		1541D9591B87C49C00E5CDE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D9581B87C49C00E5CDE5 /* main.m */; };
 		1541D95C1B87C49C00E5CDE5 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1541D95B1B87C49C00E5CDE5 /* GameScene.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1500655D1BC4794E00E6D7F6 /* Room1Gate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Gate.h; path = "Instances/Room 1/Room1Gate.h"; sourceTree = "<group>"; };
+		1500655E1BC479AF00E6D7F6 /* Room1Gate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Gate.m; path = "Instances/Room 1/Room1Gate.m"; sourceTree = "<group>"; };
 		1541D9501B87C49C00E5CDE5 /* Recursion?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recursion?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1541D9541B87C49C00E5CDE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1541D9551B87C49C00E5CDE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				15C415441BB1A30E00396078 /* Room1Enemy2.m */,
 				158CF3931BBC5D410093A9FE /* Room1Checkpoint.h */,
 				158CF3941BBC5D700093A9FE /* Room1Checkpoint.m */,
+				1500655D1BC4794E00E6D7F6 /* Room1Gate.h */,
+				1500655E1BC479AF00E6D7F6 /* Room1Gate.m */,
 			);
 			name = "Room 1";
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				15E5D45C1B954A0900516E95 /* Room1.m in Sources */,
 				15EDF95F1B90FBD8001927A8 /* Solid.m in Sources */,
 				158CF3951BBC5D700093A9FE /* Room1Checkpoint.m in Sources */,
+				1500655F1BC479AF00E6D7F6 /* Room1Gate.m in Sources */,
 				15B455561BA3275F00B1BC51 /* Room1HazardBounce.m in Sources */,
 				1541D9591B87C49C00E5CDE5 /* main.m in Sources */,
 				1541D9791B87C61400E5CDE5 /* Controls.m in Sources */,

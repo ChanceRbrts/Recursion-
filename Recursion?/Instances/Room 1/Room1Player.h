@@ -12,6 +12,10 @@
 #include "ControlEnum.h"
 /**@brief The player character in Layer 1*/
 @interface Room1Player : PlatformerInstance
+/**@brief The previous dY*/
+@property float prevDY;
+/**@brief The previous y*/
+@property float prevY;
 /**@brief Is the player against a wall on the right?*/
 @property bool againstRightWall;
 /**@brief Is the player against a wall on the left?*/
@@ -26,6 +30,10 @@
 @property bool facingRight;
 /**@brief Is the player pressing the jump button?*/
 @property bool pressingJump;
+/**@brief Is the player ducking?*/
+@property bool duck;
+/**@brief Is the player trying to unduck?*/
+@property bool unduck;
 /**@brief An update function that requires keyboard commands.
  @param con The controls that are being held.
  @param conPressed The controls that are being pressed.*/

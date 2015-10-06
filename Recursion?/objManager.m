@@ -92,7 +92,7 @@
        [self.player1 collisionWithInstance: ((Instance *)(r1Objects[i]))];
     }
     for (int i = 0; i < r1Objects.count; i++){
-        if (![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Solid"] && ![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Hazard"]){
+        if (![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Solid"] && ![((Instance *)([r1Objects objectAtIndex: i])).index isEqualToString: @"Hazard"] && ![[((Instance *)([r1Objects objectAtIndex: i])).index substringToIndex: 4] isEqualToString: @"Gate"]){
             for (int j = 0; j < r1Objects.count; j++){
                 if (i != j){
                     [((Instance *)([r1Objects objectAtIndex: i])) collisionWithInstance: ((Instance *)([r1Objects objectAtIndex: j]))];
@@ -112,6 +112,7 @@
         }
     }
     if (self.player1.hp <= 0){
+        self.player1.hp = 0;
         self.roomReset += 1;
     }
     else{
@@ -177,16 +178,25 @@
                         }
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"1"]){
-                        [objects addObject: [[Room1Enemy1 alloc] initWithX: j*20+x y:i*15+y]];
+                        [objects insertObject: [[Room1Enemy1 alloc] initWithX: j*20+x y:i*15+y] atIndex: 0];
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"!"]){
-                        [objects addObject: [[Room1HazardBounce alloc] initWithX: j*20+x y:i*15+y]];
+                        [objects insertObject: [[Room1HazardBounce alloc] initWithX: j*20+x y:i*15+y] atIndex: 0];
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"2"]){
-                        [objects addObject: [[Room1Enemy2 alloc] initWithX: j*20+x y:i*15+y]];
+                        [objects insertObject: [[Room1Enemy2 alloc] initWithX: j*20+x y:i*15+y] atIndex: 0];
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"C"]){
                         [objects addObject: [[Room1Checkpoint alloc] initWithX: j*20+x y:i*15+y]];
+                    }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"@"]){
+                        [objects addObject: [[Room1Gate alloc] initWithX: j*20+x y:i*15+y gateHeight:3 unlocked:true index:@"Gate_1"]];
+                    }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"$"]){
+                        [objects addObject: [[Room1Gate alloc] initWithX: j*20+x y:i*15+y gateHeight:1 unlocked:false index:@"Gate_2"]];
+                    }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"#"]){
+                        [objects addObject: [[Room1Gate alloc] initWithX: j*20+x y:i*15+y gateHeight:3 unlocked:false index:@"Gate_3"]];
                     }
                 }
             }

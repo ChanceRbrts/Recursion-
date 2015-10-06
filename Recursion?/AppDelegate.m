@@ -34,7 +34,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     GameScene *scene = [[GameScene alloc] init];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    scene.scaleMode = SKSceneScaleModeResizeFill;
     scene.backgroundColor = [SKColor colorWithRed:1 green:1 blue:1 alpha:1];
     [self.skView presentScene:scene];
     self.skView.showsFPS = YES;

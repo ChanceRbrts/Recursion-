@@ -12,6 +12,7 @@
 
 -(id)initWithX:(float)X y:(float)Y{
     self = [super initWithX: X y: Y];
+    self.prevDY = 0;
     self.index = @"Player";
     self.h = 64;
     self.maxHP = 3;
@@ -21,13 +22,15 @@
     self.facingRight = true;
     self.pressingJump = false;
     self.atk = 1;
+    self.duck = false;
+    self.unduck = false;
     return self;
 }
 
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     [super updateWithPlayer: self];
     //Moving Left
-    if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO] && self.hp > 0){
+    if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO] && self.hp > 0 && (!self.duck || !self.onGround)){
         self.dX -= 0.25;
         if ((self.dX < -4 && [con[B] isEqual: @NO]) || (self.dX < -8 && [con[B] isEqual: @YES])){
             if (self.dX <= -4.5 && [con[B] isEqual: @NO]){
@@ -46,7 +49,7 @@
         self.facingRight = false;
     }
     //Moving Right
-    else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO] && self.hp > 0){
+    else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO] && self.hp > 0 && (!self.duck || !self.onGround)){
         self.dX += 0.25;
         if ((self.dX > 4 && [con[B] isEqual: @NO]) || (self.dX  > 8 && [con[B] isEqual: @YES])){
             if ((self.dX >= 4.5 && [con[B] isEqual: @NO])){
@@ -79,11 +82,23 @@
     //Jumping
     if ([conPressed[A] isEqual: @YES] && self.onGround && self.hp > 0){
         if (self.dX > 0){
-            self.dY = -4-self.dX/2;
+            self.dY = -5-self.dX/2;
         }
         else{
-            self.dY = -4+self.dX/2;
+            self.dY = -5+self.dX/2;
         }
+    }
+    if ([conPressed[DOWN] isEqual: @YES] && self.duck == false && self.hp > 0){
+        self.h = 32;
+        self.y += 32;
+        self.duck = true;
+    }
+    if ([con[DOWN] isEqual: @NO] && self.duck == true && self.hp > 0){
+        self.h = 64;
+        self.prevDY = self.dY;
+        self.dY -= 32;
+        self.prevY = self.y;
+        self.unduck = true;
     }
     //More checking of Jump/A Button
     if ([con[A] isEqual: @YES]){
@@ -165,6 +180,11 @@
         self.buffer = self.maxBuffer;
     }
     self.pressingJump = false;
+    if (self.unduck && self.hp > 0){
+        self.dY += 31;
+        self.unduck = false;
+        self.duck = false;
+    }
 }
 
 -(void) extraCollisionWithDegree:(int)dg instance: (Instance *)i{
@@ -174,6 +194,12 @@
     }
     else if (dg == 180){
         self.againstLeftWall = true;
+    }
+    else if (dg == 90 && self.unduck){
+        self.h = 32;
+        self.unduck = false;
+        self.dY = self.prevDY;
+        self.y = self.prevY;
     }
     if ([i.enemy isEqualToString: @"All-Sides"] && self.buffer >= self.maxBuffer){
         self.hp -= i.atk;
