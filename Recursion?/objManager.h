@@ -32,6 +32,8 @@
 @property int mainCol;
 /**@brief The current room/layer.*/
 @property int room;
+/**@brief The timer for room 1.*/
+@property int timer1;
 /**@brief Updating the instances managed.*/
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed;
 /**@brief Update Layer 1's instances.*/

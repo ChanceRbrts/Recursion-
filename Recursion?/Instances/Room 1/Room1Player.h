@@ -34,9 +34,15 @@
 @property bool duck;
 /**@brief Is the player trying to unduck?*/
 @property bool unduck;
+/**@brief The AJ Counter.*/
+@property NSMutableArray *AJCounter;
+/**@brief The AJ Int.*/
+@property int aj;
 /**@brief An update function that requires keyboard commands.
  @param con The controls that are being held.
  @param conPressed The controls that are being pressed.*/
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed;
+/**@brief AJ. Enough said.*/
+-(void)AJ;
 @end
 #endif

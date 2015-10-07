@@ -37,6 +37,7 @@
 		15EDF9621B90FDB5001927A8 /* SpriteCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDF9611B90FDB5001927A8 /* SpriteCreator.m */; };
 		15EFCA501B8EBC5F0018FB65 /* objManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFCA4F1B8EBC5F0018FB65 /* objManager.m */; };
 		15EFCA551B8EBF120018FB65 /* Instance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EFCA541B8EBF120018FB65 /* Instance.m */; };
+		15FA737E1BC5B6EB00E95A48 /* Room1Lever.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FA737D1BC5B6EB00E95A48 /* Room1Lever.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		15EFCA4F1B8EBC5F0018FB65 /* objManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = objManager.m; sourceTree = "<group>"; };
 		15EFCA531B8EBED40018FB65 /* Instance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Instance.h; path = Instances/Instance.h; sourceTree = "<group>"; };
 		15EFCA541B8EBF120018FB65 /* Instance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Instance.m; path = Instances/Instance.m; sourceTree = "<group>"; };
+		15FA737C1BC5B48500E95A48 /* Room1Lever.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Room1Lever.h; sourceTree = "<group>"; };
+		15FA737D1BC5B6EB00E95A48 /* Room1Lever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Lever.m; path = "Instances/Room 1/Room1Lever.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,8 @@
 				158CF3941BBC5D700093A9FE /* Room1Checkpoint.m */,
 				1500655D1BC4794E00E6D7F6 /* Room1Gate.h */,
 				1500655E1BC479AF00E6D7F6 /* Room1Gate.m */,
+				15FA737C1BC5B48500E95A48 /* Room1Lever.h */,
+				15FA737D1BC5B6EB00E95A48 /* Room1Lever.m */,
 			);
 			name = "Room 1";
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				15E5D45C1B954A0900516E95 /* Room1.m in Sources */,
 				15EDF95F1B90FBD8001927A8 /* Solid.m in Sources */,
 				158CF3951BBC5D700093A9FE /* Room1Checkpoint.m in Sources */,
+				15FA737E1BC5B6EB00E95A48 /* Room1Lever.m in Sources */,
 				1500655F1BC479AF00E6D7F6 /* Room1Gate.m in Sources */,
 				15B455561BA3275F00B1BC51 /* Room1HazardBounce.m in Sources */,
 				1541D9591B87C49C00E5CDE5 /* main.m in Sources */,

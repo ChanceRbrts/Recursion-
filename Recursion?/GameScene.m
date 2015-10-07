@@ -56,6 +56,27 @@
         label.position = CGPointMake(self.view.bounds.size.width/16,self.view.bounds.size.height-16);
         label.zPosition = 1;
         label.fontSize = self.view.bounds.size.width/48;
+        if (self.OBJMAN.player1.aj > 0){
+            label.text = @"A.J., Stop. >:(";
+            label.fontSize = self.view.bounds.size.width/10;
+            label.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+            label.position = CGPointMake(self.view.bounds.size.width/2,self.view.bounds.size.height/2);
+            label.fontColor = [NSColor colorWithRed: (rand()%256)/256.0 green: (rand()%256)/256.0 blue: (rand()%256)/256.0 alpha: 1];
+        }
+        [self addChild: label];
+    }
+    if (self.OBJMAN.timer1 > 0){
+        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed: @"Courier"];
+        label.text = [NSString stringWithFormat: @"Time Left: %d:%d", (int)self.OBJMAN.timer1/60, (int)self.OBJMAN.timer1%60];
+        if (self.OBJMAN.timer1%60 < 10){
+            label.text = [NSString stringWithFormat: @"Time Left: %d:0%d", (int)self.OBJMAN.timer1/60, (int)self.OBJMAN.timer1%60];
+        }
+        label.fontColor = [NSColor blackColor];
+        label.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+        label.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
+        label.position = CGPointMake(self.view.bounds.size.width-16,16);
+        label.zPosition = 1;
+        label.fontSize = self.view.bounds.size.width/48;
         [self addChild: label];
     }
 }

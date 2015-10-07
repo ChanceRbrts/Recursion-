@@ -9,6 +9,7 @@
 #ifndef Room1Gate_h
 #define Room1Gate_h
 #include "Solid.h"
+/**A gate that opens and closes.*/
 @interface Room1Gate : Solid
 /**@brief Is the gate unlocked?*/
 @property bool unlocked;

@@ -9,6 +9,7 @@
 #ifndef Recursion__Room1HazardBounce_h
 #define Recursion__Room1HazardBounce_h
 #include "PlatformerInstance.h"
+/**@brief The bouncing enemy that looks like a hazard.*/
 @interface Room1HazardBounce : PlatformerInstance
 /**@brief The frame of animation.*/
 @property float frame;

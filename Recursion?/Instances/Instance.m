@@ -40,7 +40,7 @@
                 [self extraCollisionWithDegree:270 instance: i];
                 [i extraCollisionWithDegree: 90 instance: self];
             }
-            if (self.y+self.dY < i.y+i.dY+i.h && self.y >= i.y+i.h+i.dY && self.x+self.w > i.x+i.dX && self.x < i.x+i.w+i.dX){ //Collides on the top side.
+            if (self.y+self.dY < i.y+i.dY+i.h && self.y >= i.y+i.h+i.dY && (self.x+self.w > i.x+i.dX || (self.x+self.w+self.dX > i.x+i.dX && (self.dX >= 0.25 || self.dX <= -0.25))) && (self.x < i.x+i.w+i.dX || (self.x+self.dX < i.x+i.w+i.dX && (self.dX >= 0.25 || self.dX <= -0.25)))){ //Collides on the top side.
                 self.y = i.y+i.h;
                 self.dY = 0;
                 i.dY = 0;

@@ -9,6 +9,7 @@
 #ifndef Room1Checkpoint_h
 #define Room1Checkpoint_h
 #include "Instance.h"
+/**@brief The checkpoints in the room.*/
 @interface Room1Checkpoint : Instance
 /**@brief Has this checkpoint been activated?*/
 @property bool triggered;

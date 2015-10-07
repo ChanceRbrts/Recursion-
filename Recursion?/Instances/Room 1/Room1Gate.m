@@ -11,8 +11,8 @@
 @implementation Room1Gate
 -(id) initWithX:(float)X y:(float)Y gateHeight:(int)H unlocked:(bool)Unlocked index:(NSString*)Index{
     self = [super initWithX:X y: Y];
-    self.yLocked = Y;
-    self.yUnlocked = Y-32*H;
+    self.yLocked = self.y;
+    self.yUnlocked = self.y-32*H;
     self.unlocked = Unlocked;
     self.index = Index;
     if (Unlocked){
@@ -23,13 +23,17 @@
     }
     return self;
 }
--(void) updateWithPlayer:(Instance *)p{
-    [super updateWithPlayer:p];
-    if (self.unlocked && self.y < self.yUnlocked){
-        self.dY = 4;
+-(void) aiWithPlayer:(Instance *)p{
+    [super aiWithPlayer: p];
+    if (self.y+self.dY <= 0){
+        self.y = 0;
+        self.dY = 0;
     }
-    else if(!self.unlocked && self.y > self.yLocked){
+    else if (self.unlocked && self.y > self.yUnlocked){
         self.dY = -4;
+    }
+    else if(!self.unlocked && self.y < self.yLocked){
+        self.dY = 4;
     }
     else{
         self.dY = 0;

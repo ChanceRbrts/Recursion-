@@ -9,6 +9,7 @@
 #ifndef Room1Enemy2_h
 #define Room1Enemy2_h
 #include "Instance.h"
+/**@brief A flying enemy.*/
 @interface Room1Enemy2 : Instance
 /**@brief Affects the dY.*/
 @property float loopMove;

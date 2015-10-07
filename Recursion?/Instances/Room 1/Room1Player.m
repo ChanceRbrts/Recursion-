@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 #include "Room1Player.h"
 @implementation Room1Player
 
@@ -24,11 +25,14 @@
     self.atk = 1;
     self.duck = false;
     self.unduck = false;
+    self.AJCounter = [[NSMutableArray alloc] init];
+    self.aj = false;
     return self;
 }
 
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed{
     [super updateWithPlayer: self];
+    self.aj--;
     //Moving Left
     if ([con[LEFT]  isEqual: @YES] && [con[RIGHT] isEqual: @NO] && self.hp > 0 && (!self.duck || !self.onGround)){
         self.dX -= 0.25;
@@ -92,6 +96,7 @@
         self.h = 32;
         self.y += 32;
         self.duck = true;
+        [self AJ];
     }
     if ([con[DOWN] isEqual: @NO] && self.duck == true && self.hp > 0){
         self.h = 64;
@@ -181,7 +186,7 @@
     }
     self.pressingJump = false;
     if (self.unduck && self.hp > 0){
-        self.dY += 31;
+        self.dY = self.prevDY;
         self.unduck = false;
         self.duck = false;
     }
@@ -201,6 +206,16 @@
         self.dY = self.prevDY;
         self.y = self.prevY;
     }
+    if (self.unduck && self.dY < self.prevDY){
+        self.dY = self.prevDY;
+        if (self.y+self.dY+self.h > i.y+i.dY && self.y+self.h <= i.y+i.dY && (self.x+self.w > i.x+i.dX || (self.x+self.w+self.dX > i.x+i.dX && (self.dX >= 0.25 || self.dX <= -0.25))) && (self.x < i.x+i.w+i.dX || (self.x+self.dX < i.x+i.w+i.dX && (self.dX >= 0.25 || self.dX <= -0.25)))){ //Collides on the bottom side.
+            self.dY = 0;
+            i.dY = 0;
+            self.y = i.y-self.h;
+        }
+        self.prevDY = self.dY;
+        self.dY -= 33;
+    }
     if ([i.enemy isEqualToString: @"All-Sides"] && self.buffer >= self.maxBuffer){
         self.hp -= i.atk;
         self.buffer = 0;
@@ -219,6 +234,18 @@
             self.hp -= i.atk;
             self.buffer = 0;
         }
+    }
+}
+
+-(void)AJ{
+    [self.AJCounter addObject: [NSNumber numberWithDouble: CACurrentMediaTime()]];
+    if (self.AJCounter.count == 60){
+        double a = [((NSNumber *)(self.AJCounter[59])) doubleValue];
+        double b = [((NSNumber *)(self.AJCounter[0])) doubleValue];
+        if (a-b  < 60){
+            self.aj = 360;
+        }
+        [self.AJCounter removeObjectAtIndex: 0];
     }
 }
 

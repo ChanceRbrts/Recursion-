@@ -20,6 +20,7 @@
     self.room = 1;
     self.maxRoomReset = 240;
     self.roomReset = 0;
+    self.timer1 = 0;
     return self;
 }
 
@@ -98,6 +99,15 @@
                     [((Instance *)([r1Objects objectAtIndex: i])) collisionWithInstance: ((Instance *)([r1Objects objectAtIndex: j]))];
                 }
             }
+            if ([((Instance*)([r1Objects objectAtIndex: i])).index isEqualToString: @"Lever"] && ((Room1Lever *)([r1Objects objectAtIndex: i])).justPulled){
+                for (int a = 0; a < ((Room1Lever *)([r1Objects objectAtIndex: i])).obj.count; a++){
+                    for (int j = 0; j < r1Objects.count; j++){
+                        if ([((Instance *)([r1Objects objectAtIndex: j])).index isEqualToString: (NSString *)(((Room1Lever *)([r1Objects objectAtIndex: i])).obj[a])]){
+                            ((Room1Gate *)([r1Objects objectAtIndex: j])).unlocked = !((Room1Lever *)([r1Objects objectAtIndex: i])).isLocked;
+                        }
+                    }
+                }
+            }
         }
     }
     //Finish Updates
@@ -109,6 +119,9 @@
                 self.checkpoint1 = CGPointMake(((Instance *)(r1Objects[i])).x,((Instance *)(r1Objects[i])).y);
                 ((Room1Checkpoint *)(r1Objects[i])).triggered = false;
             }
+        }
+        if ([((Instance*)([r1Objects objectAtIndex: i])).index isEqualToString: @"Lever"]){
+            self.timer1 = (int)(((Room1Lever *)([r1Objects objectAtIndex: i])).timeLeft);
         }
     }
     if (self.player1.hp <= 0){
@@ -190,13 +203,16 @@
                         [objects addObject: [[Room1Checkpoint alloc] initWithX: j*20+x y:i*15+y]];
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"@"]){
-                        [objects addObject: [[Room1Gate alloc] initWithX: j*20+x y:i*15+y gateHeight:3 unlocked:true index:@"Gate_1"]];
+                        [objects insertObject: [[Room1Gate alloc] initWithX: j*20+x y:i*15+y gateHeight:3 unlocked:true index:@"Gate_1"] atIndex: 0];
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"$"]){
                         [objects addObject: [[Room1Gate alloc] initWithX: j*20+x y:i*15+y gateHeight:1 unlocked:false index:@"Gate_2"]];
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"#"]){
                         [objects addObject: [[Room1Gate alloc] initWithX: j*20+x y:i*15+y gateHeight:3 unlocked:false index:@"Gate_3"]];
+                    }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"L"]){
+                        [objects addObject: [[Room1Lever alloc] initWithX: j*20+x y:i*15+y]];
                     }
                 }
             }
