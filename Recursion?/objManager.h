@@ -26,6 +26,8 @@
 @property NSArray *room1Objects;
 /**@brief The player in Room/Layer 1*/
 @property Room1Player *player1;
+/**@brief The computer in Room/Layer 1*/
+@property Room1Computer *computer1;
 /**@brief The 480-pixel row that is in the middle of the screen.*/
 @property int mainRow;
 /**@brief The 640-pixel collumn that is in the middle of the screen.*/
@@ -34,6 +36,8 @@
 @property int room;
 /**@brief The timer for room 1.*/
 @property int timer1;
+/**@brief Visited room 2*/
+@property bool room2Visit;
 /**@brief Updating the instances managed.*/
 -(void)updateWithControlsHeld: (NSArray *)con controlsPressed: (NSArray*)conPressed;
 /**@brief Update Layer 1's instances.*/

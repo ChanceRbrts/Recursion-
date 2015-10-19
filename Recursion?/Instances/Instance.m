@@ -45,7 +45,7 @@
                 self.dY = 0;
                 i.dY = 0;
                 [self extraCollisionWithDegree:90 instance: i];
-                [i extraCollisionWithDegree:270 instance: i];
+                [i extraCollisionWithDegree:270 instance: self];
             }
             if (self.x+self.dX+self.w > i.x+i.dX && self.x+self.w <= i.x+i.dX && self.y+self.h > i.y+i.dY && self.y < i.y+i.h+i.dY){ //Collides on the right side.
                 self.x = i.x-self.w;
@@ -59,12 +59,12 @@
                 self.dX = 0;
                 i.dX = 0;
                 [self extraCollisionWithDegree:180 instance: i];
-                [i extraCollisionWithDegree:0 instance: i];
+                [i extraCollisionWithDegree:0 instance: self];
             }
         }
         if (self.y+self.dY+self.h > i.y+i.dY && self.y+self.dY < i.y+i.h+i.dY && self.x+self.dX+self.w > i.x+i.dX && self.x+self.dX < i.x+i.w+i.dX){
             [self extraCollisionWithDegree: -1 instance: i];
-            [i extraCollisionWithDegree: -1 instance:i];
+            [i extraCollisionWithDegree: -1 instance: self];
         }
     }
 }

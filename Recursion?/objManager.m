@@ -21,6 +21,7 @@
     self.maxRoomReset = 240;
     self.roomReset = 0;
     self.timer1 = 0;
+    self.room2Visit = false;
     return self;
 }
 
@@ -62,6 +63,7 @@
     if (self.room == 1){
         [self.player1 updateWithControlsHeld:con controlsPressed:conPressed];
     }
+    self.room = [self.computer1 updateWithPlayer: self.player1 room: self.room controlsPressed:conPressed];
     NSMutableArray *r1Objects = [[NSMutableArray alloc] init];
     for (int r = self.mainRow-1; r <= self.mainRow+1; r++){
         if (r >= 0 && r < self.room1Objects.count){
@@ -103,6 +105,7 @@
                 for (int a = 0; a < ((Room1Lever *)([r1Objects objectAtIndex: i])).obj.count; a++){
                     for (int j = 0; j < r1Objects.count; j++){
                         if ([((Instance *)([r1Objects objectAtIndex: j])).index isEqualToString: (NSString *)(((Room1Lever *)([r1Objects objectAtIndex: i])).obj[a])]){
+                            self.computer1.comOn = ((Room1Lever *)([r1Objects objectAtIndex: i])).isLocked;
                             ((Room1Gate *)([r1Objects objectAtIndex: j])).unlocked = !((Room1Lever *)([r1Objects objectAtIndex: i])).isLocked;
                         }
                     }
@@ -112,6 +115,7 @@
     }
     //Finish Updates
     [self.player1 finishUpdate];
+    [self.computer1 finishUpdate];
     for (int i = 0; i < r1Objects.count; i++){
         [(Instance*)(r1Objects[i]) finishUpdate];
         if ([((Instance*)(r1Objects[i])).index isEqualToString: @"Checkpoint"]){
@@ -140,6 +144,7 @@
         obj = self.room1Objects;
         self.mainCol = self.player1.x/640;
         self.mainRow = self.player1.y/480;
+        [instru addObject: [self.computer1 drawWithViewX:self.viewX viewY:self.viewY]];
         [instru addObject: [self.player1 drawWithViewX:self.viewX viewY:self.viewY]];
     }
     NSMutableArray *drObjects = [[NSMutableArray alloc] init];
@@ -213,6 +218,9 @@
                     }
                     else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"L"]){
                         [objects addObject: [[Room1Lever alloc] initWithX: j*20+x y:i*15+y]];
+                    }
+                    else if ([[[row substringFromIndex:x] substringToIndex: 1] isEqualToString: @"O"]){
+                        self.computer1 = [[Room1Computer alloc] initWithX: j*20+x y: i*15+y];
                     }
                 }
             }

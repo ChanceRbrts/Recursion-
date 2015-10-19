@@ -16,6 +16,7 @@
 #include "Room1Checkpoint.h"
 #include "Room1Gate.h"
 #include "Room1Lever.h"
+#include "Room1Computer.h"
 @interface Room1 : NSObject
 /**@brief The layout of the room.*/
 @property NSArray *Room1;
