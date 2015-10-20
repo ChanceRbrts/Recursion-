@@ -8,7 +8,9 @@
 
 #ifndef Room2_h
 #define Room2_h
+#include "Room2Player.h"
 @interface Room2 : NSObject
+/**@brief The layout of the room.*/
 @property NSArray *Room2;
 @end
 #endif /* Room2_h */

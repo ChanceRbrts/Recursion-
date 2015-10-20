@@ -27,7 +27,7 @@
     if ([con[UP] isEqual: @YES] && [con[DOWN] isEqual: @NO]){
         self.dY = -4;
     }
-    else if ([con[RIGHT] isEqual: @YES] && [con[LEFT] isEqual: @NO]){
+    else if ([con[DOWN] isEqual: @YES] && [con[UP] isEqual: @NO]){
         self.dY = 4;
     }
     else{
@@ -36,5 +36,13 @@
     if (self.dX != 0 || self.dY != 0){
         self.direction = (int)(acosf(self.dX/(sqrt(self.dX*self.dX + self.dY*self.dY)))*180/M_PI);
     }
+}
+
+-(NSArray *)drawWithViewX:(float)vX viewY:(float)vY{
+    return(@[@"Replacement",
+             [NSNumber numberWithFloat: self.x-vX],[NSNumber numberWithFloat: self.y-vY],
+             [NSNumber numberWithFloat: self.w], [NSNumber numberWithFloat: self.h],
+             [NSNumber numberWithFloat: 0]]);
+    
 }
 @end

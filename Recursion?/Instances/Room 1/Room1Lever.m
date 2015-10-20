@@ -45,7 +45,7 @@
 }
 
 -(NSArray *)drawWithViewX:(float)vX viewY:(float)vY{
-    return(@[@"SolidWallPlaceholder",
+    return(@[@"Replacement",
              [NSNumber numberWithFloat: self.x-vX],[NSNumber numberWithFloat: self.y-vY],
              [NSNumber numberWithFloat: self.w], [NSNumber numberWithFloat: self.h],
              [NSNumber numberWithFloat: 0]]);

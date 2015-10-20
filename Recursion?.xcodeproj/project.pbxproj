@@ -24,6 +24,7 @@
 		15B949ED1BC9614A008BF0D4 /* Room2.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B949EC1BC9614A008BF0D4 /* Room2.m */; settings = {ASSET_TAGS = (); }; };
 		15C415451BB1A30E00396078 /* Room1Enemy2.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C415441BB1A30E00396078 /* Room1Enemy2.m */; settings = {ASSET_TAGS = (); }; };
 		15C8ACA71B97DFD2001CD50A /* SolidWallPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 15C8ACA61B97DFD2001CD50A /* SolidWallPlaceholder.png */; };
+		15DFCA3C1BD6FBAB00ACC428 /* Replacement.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DFCA3B1BD6FBAB00ACC428 /* Replacement.png */; settings = {ASSET_TAGS = (); }; };
 		15E52F421BA0CFE1000EC2A3 /* Room1Enemy1.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E52F411BA0CFE1000EC2A3 /* Room1Enemy1.m */; };
 		15E5D4531B953C0F00516E95 /* Room1Hazard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44B1B953C0F00516E95 /* Room1Hazard1.png */; };
 		15E5D4541B953C0F00516E95 /* Room1Hazard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E5D44C1B953C0F00516E95 /* Room1Hazard2.png */; };
@@ -86,6 +87,7 @@
 		15C415431BB1A2C200396078 /* Room1Enemy2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Enemy2.h; path = "Instances/Room 1/Room1Enemy2.h"; sourceTree = "<group>"; };
 		15C415441BB1A30E00396078 /* Room1Enemy2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Enemy2.m; path = "Instances/Room 1/Room1Enemy2.m"; sourceTree = "<group>"; };
 		15C8ACA61B97DFD2001CD50A /* SolidWallPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SolidWallPlaceholder.png; path = Sprites/SolidWallPlaceholder.png; sourceTree = "<group>"; };
+		15DFCA3B1BD6FBAB00ACC428 /* Replacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Replacement.png; path = Sprites/Replacement.png; sourceTree = "<group>"; };
 		15E52F401BA0CFC8000EC2A3 /* Room1Enemy1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Room1Enemy1.h; path = "Instances/Room 1/Room1Enemy1.h"; sourceTree = "<group>"; };
 		15E52F411BA0CFE1000EC2A3 /* Room1Enemy1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room1Enemy1.m; path = "Instances/Room 1/Room1Enemy1.m"; sourceTree = "<group>"; };
 		15E5D44B1B953C0F00516E95 /* Room1Hazard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Room1Hazard1.png; path = Sprites/Room1Hazard/Room1Hazard1.png; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		15E5D4491B953B6600516E95 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				15DFCA3B1BD6FBAB00ACC428 /* Replacement.png */,
 				15C8ACA61B97DFD2001CD50A /* SolidWallPlaceholder.png */,
 				15E5D44A1B953B7700516E95 /* Room1Hazard */,
 			);
@@ -377,6 +380,7 @@
 				15E5D4571B953C0F00516E95 /* Room1Hazard5.png in Resources */,
 				15E5D4591B953C0F00516E95 /* Room1Hazard7.png in Resources */,
 				1541D9601B87C49C00E5CDE5 /* Images.xcassets in Resources */,
+				15DFCA3C1BD6FBAB00ACC428 /* Replacement.png in Resources */,
 				1541D9631B87C49C00E5CDE5 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
